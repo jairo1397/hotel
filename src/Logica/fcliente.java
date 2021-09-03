@@ -24,9 +24,9 @@ public class Fcliente {
         totalregistros = 0;
         modelo = new DefaultTableModel(null, titulos);
 
-        sSQL = "select p.idpersona,p.nombre,p.apaterno,p.amaterno,p.tipo_documento,p.num_documento,"
+        sSQL = "select p.idpersona,p.nombre,p.apaterno,p.amaterno,p.tipodocumento,p.numdocumento,"
                 + "p.direccion,p.telefono,p.email,c.codigo_cliente from persona p inner join cliente c "
-                + "on p.idpersona=c.idpersona where num_documento like '%"
+                + "on p.idpersona=c.idpersona where numdocumento like '%"
                 + buscar + "%' order by idpersona desc";
 
         try {
@@ -38,8 +38,8 @@ public class Fcliente {
                 registro[1] = rs.getString("nombre");
                 registro[2] = rs.getString("apaterno");
                 registro[3] = rs.getString("amaterno");
-                registro[4] = rs.getString("tipo_documento");
-                registro[5] = rs.getString("num_documento");
+                registro[4] = rs.getString("tipodocumento");
+                registro[5] = rs.getString("numdocumento");
                 registro[6] = rs.getString("direccion");
                 registro[7] = rs.getString("telefono");
                 registro[8] = rs.getString("email");
@@ -59,7 +59,7 @@ public class Fcliente {
     }
 
     public boolean insertar(Vcliente dts) {
-        sSQL = "insert into persona (nombre,apaterno,amaterno,tipo_documento,num_documento,direccion,telefono,email)"
+        sSQL = "insert into persona (nombre,apaterno,amaterno,tipodocumento,numdocumento,direccion,telefono,email)"
                 + "values (?,?,?,?,?,?,?,?)";
         sSQL2 = "insert into cliente (idpersona,codigo_cliente)"
                 + "values ((select idpersona from persona order by idpersona desc limit 1),?)";
@@ -71,8 +71,8 @@ public class Fcliente {
             pst.setString(1, dts.getNombre());
             pst.setString(2, dts.getApaterno());
             pst.setString(3, dts.getAmaterno());
-            pst.setString(4, dts.getTipo_documento());
-            pst.setString(5, dts.getNum_documento());
+            pst.setString(4, dts.getTipodocumento());
+            pst.setString(5, dts.getNumdocumento());
             pst.setString(6, dts.getDireccion());
             pst.setString(7, dts.getTelefono());
             pst.setString(8, dts.getEmail());
@@ -102,7 +102,7 @@ public class Fcliente {
     }
 
     public boolean editar(Vcliente dts) {
-        sSQL = "update persona set nombre=?,apaterno=?,amaterno=?,tipo_documento=?,num_documento=?,"
+        sSQL = "update persona set nombre=?,apaterno=?,amaterno=?,tipodocumento=?,numdocumento=?,"
                 + " direccion=?,telefono=?,email=? where idpersona=?";
         
         sSQL2 = "update cliente set codigo_cliente=?"
@@ -115,8 +115,8 @@ public class Fcliente {
             pst.setString(1, dts.getNombre());
             pst.setString(2, dts.getApaterno());
             pst.setString(3, dts.getAmaterno());
-            pst.setString(4, dts.getTipo_documento());
-            pst.setString(5, dts.getNum_documento());
+            pst.setString(4, dts.getTipodocumento());
+            pst.setString(5, dts.getNumdocumento());
             pst.setString(6, dts.getDireccion());
             pst.setString(7, dts.getTelefono());
             pst.setString(8, dts.getEmail());

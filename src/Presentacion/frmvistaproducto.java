@@ -182,7 +182,9 @@ void mostrar(String buscar) {
         if (evt.getClickCount()==2) {
             int fila= tablalistado.getSelectedRow();
             
-            String cod,valor1,valor2;
+            String cod;
+            String valor1;
+            String valor2;
             
             cod=tablalistado.getValueAt(fila,0).toString();
             valor1=tablalistado.getValueAt(fila,1).toString();

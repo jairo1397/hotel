@@ -8,24 +8,24 @@ public class Vreserva {
     private int idhabitacion;
     private int idcliente;
     private int idtrabajador;
-    private String tipo_reserva;
-    private Date fecha_reserva;
-    private Date fecha_ingresa;
-    private Date fecha_salida;
-    private Double costo_alojamiento;
+    private String tiporeserva;
+    private Date fechareserva;
+    private Date fechaingresa;
+    private Date fechasalida;
+    private Double costoalojamiento;
     private String estado;
 
 
-    public Vreserva(int idreserva, int idhabitacion, int idcliente, int idtrabajador, String tipo_reserva, Date fecha_reserva, Date fecha_ingresa, Date fecha_salida, Double costo_alojamiento, String estado) {
+    public Vreserva(int idreserva, int idhabitacion, int idcliente, int idtrabajador, String tiporeserva, Date fechareserva, Date fechaingresa, Date fechasalida, Double costoalojamiento, String estado) {
         this.idreserva = idreserva;
         this.idhabitacion = idhabitacion;
         this.idcliente = idcliente;
         this.idtrabajador = idtrabajador;
-        this.tipo_reserva = tipo_reserva;
-        this.fecha_reserva = fecha_reserva;
-        this.fecha_ingresa = fecha_ingresa;
-        this.fecha_salida = fecha_salida;
-        this.costo_alojamiento = costo_alojamiento;
+        this.tiporeserva = tiporeserva;
+        this.fechareserva = fechareserva;
+        this.fechaingresa = fechaingresa;
+        this.fechasalida = fechasalida;
+        this.costoalojamiento = costoalojamiento;
         this.estado = estado;
     }
 
@@ -65,44 +65,44 @@ public class Vreserva {
         this.idtrabajador = idtrabajador;
     }
 
-    public String getTipo_reserva() {
-        return tipo_reserva;
+    public String getTiporeserva() {
+        return tiporeserva;
     }
 
-    public void setTipo_reserva(String tipo_reserva) {
-        this.tipo_reserva = tipo_reserva;
+    public void setTiporeserva(String tiporeserva) {
+        this.tiporeserva = tiporeserva;
     }
 
-    public Date getFecha_reserva() {
-        return fecha_reserva;
+    public Date getFechareserva() {
+        return fechareserva;
     }
 
-    public void setFecha_reserva(Date fecha_reserva) {
-        this.fecha_reserva = fecha_reserva;
+    public void setFechareserva(Date fechareserva) {
+        this.fechareserva = fechareserva;
     }
 
-    public Date getFecha_ingresa() {
-        return fecha_ingresa;
+    public Date getFechaingresa() {
+        return fechaingresa;
     }
 
-    public void setFecha_ingresa(Date fecha_ingresa) {
-        this.fecha_ingresa = fecha_ingresa;
+    public void setFechaingresa(Date fechaingresa) {
+        this.fechaingresa = fechaingresa;
     }
 
-    public Date getFecha_salida() {
-        return fecha_salida;
+    public Date getFechasalida() {
+        return fechasalida;
     }
 
-    public void setFecha_salida(Date fecha_salida) {
-        this.fecha_salida = fecha_salida;
+    public void setFechasalida(Date fechasalida) {
+        this.fechasalida = fechasalida;
     }
 
-    public Double getCosto_alojamiento() {
-        return costo_alojamiento;
+    public Double getCostoalojamiento() {
+        return costoalojamiento;
     }
 
-    public void setCosto_alojamiento(Double costo_alojamiento) {
-        this.costo_alojamiento = costo_alojamiento;
+    public void setCostoalojamiento(Double costoalojamiento) {
+        this.costoalojamiento = costoalojamiento;
     }
 
     public String getEstado() {

@@ -8,19 +8,19 @@ public class Vhabitacion {
     private String piso;
     private String descripcion;
     private String caracteristicas;
-    private Double precio_diario;
+    private Double preciodiario;
     private String estado;
-    private String tipo_habitacion;
+    private String tipohabitacion;
 
-    public Vhabitacion(int idhabitacion, String numero, String piso, String descripcion, String caracteristicas, Double precio_diario, String estado, String tipo_habitacion) {
+    public Vhabitacion(int idhabitacion, String numero, String piso, String descripcion, String caracteristicas, Double preciodiario, String estado, String tipohabitacion) {
         this.idhabitacion = idhabitacion;
         this.numero = numero;
         this.piso = piso;
         this.descripcion = descripcion;
         this.caracteristicas = caracteristicas;
-        this.precio_diario = precio_diario;
+        this.preciodiario = preciodiario;
         this.estado = estado;
-        this.tipo_habitacion = tipo_habitacion;
+        this.tipohabitacion = tipohabitacion;
     }
 
     public Vhabitacion() {
@@ -69,12 +69,12 @@ public class Vhabitacion {
         this.caracteristicas = caracteristicas;
     }
 
-    public Double getPrecio_diario() {
-        return precio_diario;
+    public Double getPreciodiario() {
+        return preciodiario;
     }
 
-    public void setPrecio_diario(Double precio_diario) {
-        this.precio_diario = precio_diario;
+    public void setPreciodiario(Double preciodiario) {
+        this.preciodiario = preciodiario;
     }
 
     public String getEstado() {
@@ -85,12 +85,12 @@ public class Vhabitacion {
         this.estado = estado;
     }
 
-    public String getTipo_habitacion() {
-        return tipo_habitacion;
+    public String getTipohabitacion() {
+        return tipohabitacion;
     }
 
-    public void setTipo_habitacion(String tipo_habitacion) {
-        this.tipo_habitacion = tipo_habitacion;
+    public void setTipohabitacion(String tipohabitacion) {
+        this.tipohabitacion = tipohabitacion;
     }
     
     

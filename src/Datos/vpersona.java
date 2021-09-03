@@ -6,8 +6,8 @@ public class Vpersona {
     private String nombre;
     private String apaterno;
     private String amaterno;
-    private String tipo_documento;
-    private String num_documento;
+    private String tipodocumento;
+    private String numdocumento;
     private String direccion;
     private String telefono;
     private String email;
@@ -16,13 +16,13 @@ public class Vpersona {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Vpersona(int idpersona, String nombre, String apaterno, String amaterno, String tipo_documento, String num_documento, String direccion, String telefono, String email) {
+    public Vpersona(int idpersona, String nombre, String apaterno, String amaterno, String tipodocumento, String numdocumento, String direccion, String telefono, String email) {
         this.idpersona = idpersona;
         this.nombre = nombre;
         this.apaterno = apaterno;
         this.amaterno = amaterno;
-        this.tipo_documento = tipo_documento;
-        this.num_documento = num_documento;
+        this.tipodocumento = tipodocumento;
+        this.numdocumento = numdocumento;
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
@@ -60,20 +60,20 @@ public class Vpersona {
         this.amaterno = amaterno;
     }
 
-    public String getTipo_documento() {
-        return tipo_documento;
+    public String getTipodocumento() {
+        return tipodocumento;
     }
 
-    public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
+    public void setTipodocumento(String tipodocumento) {
+        this.tipodocumento = tipodocumento;
     }
 
-    public String getNum_documento() {
-        return num_documento;
+    public String getNumdocumento() {
+        return numdocumento;
     }
 
-    public void setNum_documento(String num_documento) {
-        this.num_documento = num_documento;
+    public void setNumdocumento(String numdocumento) {
+        this.numdocumento = numdocumento;
     }
 
     public String getDireccion() {

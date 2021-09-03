@@ -8,16 +8,16 @@ public class Vproducto {
     private int idproducto;
     private String nombre;
     private String descripcion;
-    private String unidad_medida;
-    private Double precio_venta;
+    private String unidadmedida;
+    private Double precioventa;
 
 
-    public Vproducto(int idproducto, String nombre, String descripcion, String unidad_medida, Double precio_venta) {
+    public Vproducto(int idproducto, String nombre, String descripcion, String unidadmedida, Double precioventa) {
         this.idproducto = idproducto;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.unidad_medida = unidad_medida;
-        this.precio_venta = precio_venta;
+        this.unidadmedida = unidadmedida;
+        this.precioventa = precioventa;
     }
 
     public Vproducto() {
@@ -48,20 +48,20 @@ public class Vproducto {
         this.descripcion = descripcion;
     }
 
-    public String getUnidad_medida() {
-        return unidad_medida;
+    public String getUnidadmedida() {
+        return unidadmedida;
     }
 
-    public void setUnidad_medida(String unidad_medida) {
-        this.unidad_medida = unidad_medida;
+    public void setUnidadmedida(String unidadmedida) {
+        this.unidadmedida = unidadmedida;
     }
 
-    public Double getPrecio_venta() {
-        return precio_venta;
+    public Double getPrecioventa() {
+        return precioventa;
     }
 
-    public void setPrecio_venta(Double precio_venta) {
-        this.precio_venta = precio_venta;
+    public void setPrecioventa(Double precioventa) {
+        this.precioventa = precioventa;
     }
     
     

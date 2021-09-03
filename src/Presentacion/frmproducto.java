@@ -483,9 +483,9 @@ public class Frmproducto extends javax.swing.JInternalFrame {
 
         dts.setNombre(txtnombre.getText());
         dts.setDescripcion(txtdescripcion.getText());
-        dts.setPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
+        dts.setPrecioventa(Double.parseDouble(txtprecio_venta.getText()));
         int seleccionado = cbounidad_medida.getSelectedIndex();
-        dts.setUnidad_medida((String) cbounidad_medida.getItemAt(seleccionado));
+        dts.setUnidadmedida((String) cbounidad_medida.getItemAt(seleccionado));
 
         
         if (accion.equals("guardar")) {

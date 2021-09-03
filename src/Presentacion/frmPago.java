@@ -605,10 +605,10 @@ public class FrmPago extends javax.swing.JInternalFrame {
 
         dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
         int seleccionado = cbotipo_comprobante.getSelectedIndex();
-        dts.setTipo_comprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
-        dts.setNum_comprobante(txtnum_comprobante.getText());
+        dts.setTipocomprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
+        dts.setNumcomprobante(txtnum_comprobante.getText());
         dts.setIgv(Double.parseDouble(txtigv.getText()));
-        dts.setTotal_pago(Double.parseDouble(txttotal_pago.getText()));
+        dts.setTotalpago(Double.parseDouble(txttotal_pago.getText()));
         
         Calendar cal;
         int d;
@@ -620,7 +620,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
         
-        dts.setFecha_pago( new Date (a,m,d));
+        dts.setFechapago( new Date (a,m,d));
         
         
         cal=dcfecha_emision.getCalendar();
@@ -628,7 +628,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
         
-        dts.setFecha_emision(new Date (a,m,d));
+        dts.setFechaemision(new Date (a,m,d));
         
         
         

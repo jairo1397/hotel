@@ -13,14 +13,15 @@ public class Frmreserva extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmreserva
      */
+         private String accion = "guardar";
+     public static int idusuario;
     public Frmreserva() {
         initComponents();
         mostrar("");
         inhabilitar();
     }
     
-     private String accion = "guardar";
-     public static int idusuario;
+
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
@@ -637,7 +638,7 @@ public class Frmreserva extends javax.swing.JInternalFrame {
         dts.setIdtrabajador(idusuario);
         
         int seleccionado = cbotipo_reserva.getSelectedIndex();
-        dts.setTipo_reserva((String) cbotipo_reserva.getItemAt(seleccionado));
+        dts.setTiporeserva((String) cbotipo_reserva.getItemAt(seleccionado));
         
         Calendar cal;
         int d;
@@ -647,21 +648,21 @@ public class Frmreserva extends javax.swing.JInternalFrame {
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_reserva(new Date(a,m,d));
+        dts.setFechareserva(new Date(a,m,d));
         
         cal=dcfecha_ingresa.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_ingresa(new Date(a,m,d));
+        dts.setFechaingresa(new Date(a,m,d));
         
         cal=dcfecha_salida.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_salida(new Date(a,m,d));
+        dts.setFechasalida(new Date(a,m,d));
         
-        dts.setCosto_alojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
+        dts.setCostoalojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
         seleccionado = cboestado.getSelectedIndex();
         dts.setEstado((String) cboestado.getItemAt(seleccionado));
         

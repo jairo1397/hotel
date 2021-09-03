@@ -6,23 +6,23 @@ import java.sql.Date;
 public class Vpago {
     private int idpago;
     private int idreserva;
-    private String tipo_comprobante;
-    private String num_comprobante;
+    private String tipocomprobante;
+    private String numcomprobante;
     private Double igv;
-    private Double total_pago;
-    private Date fecha_emision;
-    private Date fecha_pago;
+    private Double totalpago;
+    private Date fechaemision;
+    private Date fechapago;
 
 
-    public Vpago(int idpago, int idreserva, String tipo_comprobante, String num_comprobante, Double igv, Double total_pago, Date fecha_emision, Date fecha_pago) {
+    public Vpago(int idpago, int idreserva, String tipocomprobante, String numcomprobante, Double igv, Double totalpago, Date fechaemision, Date fechapago) {
         this.idpago = idpago;
         this.idreserva = idreserva;
-        this.tipo_comprobante = tipo_comprobante;
-        this.num_comprobante = num_comprobante;
+        this.tipocomprobante = tipocomprobante;
+        this.numcomprobante = numcomprobante;
         this.igv = igv;
-        this.total_pago = total_pago;
-        this.fecha_emision = fecha_emision;
-        this.fecha_pago = fecha_pago;
+        this.totalpago = totalpago;
+        this.fechaemision = fechaemision;
+        this.fechapago = fechapago;
     }
 
     public Vpago() {
@@ -47,20 +47,20 @@ public class Vpago {
         this.idreserva = idreserva;
     }
 
-    public String getTipo_comprobante() {
-        return tipo_comprobante;
+    public String getTipocomprobante() {
+        return tipocomprobante;
     }
 
-    public void setTipo_comprobante(String tipo_comprobante) {
-        this.tipo_comprobante = tipo_comprobante;
+    public void setTipocomprobante(String tipocomprobante) {
+        this.tipocomprobante = tipocomprobante;
     }
 
-    public String getNum_comprobante() {
-        return num_comprobante;
+    public String getNumcomprobante() {
+        return numcomprobante;
     }
 
-    public void setNum_comprobante(String num_comprobante) {
-        this.num_comprobante = num_comprobante;
+    public void setNumcomprobante(String numcomprobante) {
+        this.numcomprobante = numcomprobante;
     }
 
     public Double getIgv() {
@@ -71,28 +71,28 @@ public class Vpago {
         this.igv = igv;
     }
 
-    public Double getTotal_pago() {
-        return total_pago;
+    public Double getTotalpago() {
+        return totalpago;
     }
 
-    public void setTotal_pago(Double total_pago) {
-        this.total_pago = total_pago;
+    public void setTotalpago(Double totalpago) {
+        this.totalpago = totalpago;
     }
 
-    public Date getFecha_emision() {
-        return fecha_emision;
+    public Date getFechaemision() {
+        return fechaemision;
     }
 
-    public void setFecha_emision(Date fecha_emision) {
-        this.fecha_emision = fecha_emision;
+    public void setFechaemision(Date fechaemision) {
+        this.fechaemision = fechaemision;
     }
 
-    public Date getFecha_pago() {
-        return fecha_pago;
+    public Date getFechapago() {
+        return fechapago;
     }
 
-    public void setFecha_pago(Date fecha_pago) {
-        this.fecha_pago = fecha_pago;
+    public void setFechapago(Date fechapago) {
+        this.fechapago = fechapago;
     }
     
     

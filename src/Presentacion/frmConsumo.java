@@ -476,7 +476,7 @@ private String accion = "guardar";
         dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
         dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
         dts.setCantidad(Double.parseDouble(txtcantidad.getText()));
-        dts.setPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
+        dts.setPrecioventa(Double.parseDouble(txtprecio_venta.getText()));
         
         int seleccionado = cboesado.getSelectedIndex();
         dts.setEstado((String) cboesado.getItemAt(seleccionado));

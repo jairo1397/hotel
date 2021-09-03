@@ -630,8 +630,8 @@ public class Frmtrabajador extends javax.swing.JInternalFrame {
         dts.setApaterno(txtapaterno.getText());
         dts.setAmaterno(txtamaterno.getText());
         int seleccionado = cbotipo_documento.getSelectedIndex();
-        dts.setTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
-        dts.setNum_documento(txtnum_documento.getText());
+        dts.setTipodocumento((String) cbotipo_documento.getItemAt(seleccionado));
+        dts.setNumdocumento(txtnum_documento.getText());
         dts.setDireccion(txtdireccion.getText());
         dts.setTelefono(txttelefono.getText());
         dts.setEmail(txtemail.getText());

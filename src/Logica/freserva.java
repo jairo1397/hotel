@@ -29,9 +29,9 @@ public class Freserva {
                "(select apaterno from persona where idpersona=r.idcliente)as clienteap,"+
                "r.idtrabajador,(select nombre from persona where idpersona=r.idtrabajador)as trabajadorn,"+
                "(select apaterno from persona where idpersona=r.idtrabajador)as trabajadorap,"+
-               "r.tipo_reserva,r.fecha_reserva,r.fec"
-               + "ha_ingresa,r.fecha_salida,"+
-               "r.costo_alojamiento,r.estado from reserva r inner join habitacion h on r.idhabitacion=h.idhabitacion where r.fecha_reserva like '%"+ buscar + "%' order by idreserva desc";
+               "r.tiporeserva,r.fechareserva,r.fec"
+               + "ha_ingresa,r.fechasalida,"+
+               "r.costoalojamiento,r.estado from reserva r inner join habitacion h on r.idhabitacion=h.idhabitacion where r.fechareserva like '%"+ buscar + "%' order by idreserva desc";
        
        try {
            Statement st= cn.createStatement();
@@ -45,11 +45,11 @@ public class Freserva {
                registro [4]=rs.getString("clienten") + " " + rs.getString("clienteap") ;
                registro [5]=rs.getString("idtrabajador");
                registro [6]=rs.getString("trabajadorn") + " " + rs.getString("trabajadorap");
-               registro [7]=rs.getString("tipo_reserva");
-               registro [8]=rs.getString("fecha_reserva");
-               registro [9]=rs.getString("fecha_ingresa");
-               registro [10]=rs.getString("fecha_salida");
-               registro [11]=rs.getString("costo_alojamiento");
+               registro [7]=rs.getString("tiporeserva");
+               registro [8]=rs.getString("fechareserva");
+               registro [9]=rs.getString("fechaingresa");
+               registro [10]=rs.getString("fechasalida");
+               registro [11]=rs.getString("costoalojamiento");
                registro [12]=rs.getString("estado");
                
                totalregistros=totalregistros+1;
@@ -68,7 +68,7 @@ public class Freserva {
    } 
    
    public boolean insertar (Vreserva dts){
-       sSQL="insert into reserva (idhabitacion,idcliente,idtrabajador,tipo_reserva,fecha_reserva,fecha_ingresa,fecha_salida,costo_alojamiento,estado)" +
+       sSQL="insert into reserva (idhabitacion,idcliente,idtrabajador,tiporeserva,fechareserva,fechaingresa,fechasalida,costoalojamiento,estado)" +
                "values (?,?,?,?,?,?,?,?,?)";
        try {
            
@@ -76,11 +76,11 @@ public class Freserva {
            pst.setInt(1, dts.getIdhabitacion());
            pst.setInt(2, dts.getIdcliente());
            pst.setInt(3, dts.getIdtrabajador());
-           pst.setString(4, dts.getTipo_reserva());
-           pst.setDate(5, dts.getFecha_reserva());
-           pst.setDate(6, dts.getFecha_ingresa());
-           pst.setDate(7, dts.getFecha_salida());
-           pst.setDouble(8, dts.getCosto_alojamiento());
+           pst.setString(4, dts.getTiporeserva());
+           pst.setDate(5, dts.getFechareserva());
+           pst.setDate(6, dts.getFechaingresa());
+           pst.setDate(7, dts.getFechasalida());
+           pst.setDouble(8, dts.getCostoalojamiento());
            pst.setString(9, dts.getEstado());
            
            int n=pst.executeUpdate();
@@ -101,7 +101,7 @@ public class Freserva {
    }
    
    public boolean editar (Vreserva dts){
-       sSQL="update reserva set idhabitacion=?,idcliente=?,idtrabajador=?,tipo_reserva=?,fecha_reserva=?,fecha_ingresa=?,fecha_salida=?,costo_alojamiento=?,estado=?"+
+       sSQL="update reserva set idhabitacion=?,idcliente=?,idtrabajador=?,tiporeserva=?,fechareserva=?,fechaingresa=?,fechasalida=?,costoalojamiento=?,estado=?"+
                " where idreserva=?";
            
        
@@ -110,11 +110,11 @@ public class Freserva {
              pst.setInt(1, dts.getIdhabitacion());
            pst.setInt(2, dts.getIdcliente());
            pst.setInt(3, dts.getIdtrabajador());
-           pst.setString(4, dts.getTipo_reserva());
-           pst.setDate(5, dts.getFecha_reserva());
-           pst.setDate(6, dts.getFecha_ingresa());
-           pst.setDate(7, dts.getFecha_salida());
-           pst.setDouble(8, dts.getCosto_alojamiento());
+           pst.setString(4, dts.getTiporeserva());
+           pst.setDate(5, dts.getFechareserva());
+           pst.setDate(6, dts.getFechaingresa());
+           pst.setDate(7, dts.getFechasalida());
+           pst.setDouble(8, dts.getCostoalojamiento());
            pst.setString(9, dts.getEstado());
            
            pst.setInt(10, dts.getIdreserva());

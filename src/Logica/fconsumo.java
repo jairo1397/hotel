@@ -28,7 +28,7 @@ public class Fconsumo {
        totalconsumo=0.0;
        modelo = new DefaultTableModel(null,titulos);
        
-       sSQL="select c.idconsumo,c.idreserva,c.idproducto,p.nombre,c.cantidad,c.precio_venta "
+       sSQL="select c.idconsumo,c.idreserva,c.idproducto,p.nombre,c.cantidad,c.precioventa "
                + ",c.estado from consumo c inner join producto p on c.idproducto=p.idproducto"
                + " where c.idreserva ="+ buscar + " order by c.idconsumo desc";
        
@@ -42,11 +42,11 @@ public class Fconsumo {
                registro [2]=rs.getString("idproducto");
                registro [3]=rs.getString("nombre");
                registro [4]=rs.getString("cantidad");
-               registro [5]=rs.getString("precio_venta");
+               registro [5]=rs.getString("precioventa");
                registro [6]=rs.getString("estado");
                
                totalregistros=totalregistros+1;
-               totalconsumo=totalconsumo + (rs.getDouble("cantidad") * rs.getDouble("precio_venta") );
+               totalconsumo=totalconsumo + (rs.getDouble("cantidad") * rs.getDouble("precioventa") );
                
                modelo.addRow(registro);
                
@@ -63,15 +63,15 @@ public class Fconsumo {
    } 
    
    public boolean insertar (Vconsumo dts){
-       sSQL="insert into consumo (idreserva,idproducto,cantidad,precio_venta,estado)" +
+       sSQL="insert into consumo (idreserva,idproducto,cantidad,precioventa,estado)" +
                "values (?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.GetIdreserva());
-           pst.setInt(2, dts.GetIdproducto());
-           pst.setDouble(3, dts.GetCantidad());
-           pst.setDouble(4, dts.GetPrecio_venta());
+           pst.setInt(1, dts.getIdreserva());
+           pst.setInt(2, dts.getIdproducto());
+           pst.setDouble(3, dts.getCantidad());
+           pst.setDouble(4, dts.getPrecioventa());
            pst.setString(5, dts.getEstado());
            
            
@@ -93,19 +93,19 @@ public class Fconsumo {
    }
    
    public boolean editar (Vconsumo dts){
-       sSQL="update consumo set idreserva=?,idproducto=?,cantidad=?,precio_venta=?,estado=?"+
+       sSQL="update consumo set idreserva=?,idproducto=?,cantidad=?,precioventa=?,estado=?"+
                " where idconsumo=?";
            
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.GetIdreserva());
-           pst.setInt(2, dts.GetIdproducto());
-           pst.setDouble(3, dts.GetCantidad());
-           pst.setDouble(4, dts.GetPrecio_venta());
+           pst.setInt(1, dts.getIdreserva());
+           pst.setInt(2, dts.getIdproducto());
+           pst.setDouble(3, dts.getCantidad());
+           pst.setDouble(4, dts.getPrecioventa());
            pst.setString(5, dts.getEstado());
            
-           pst.setInt(6, dts.GetIdconsumo());
+           pst.setInt(6, dts.getIdconsumo());
            
            int n=pst.executeUpdate();
            
@@ -129,7 +129,7 @@ public class Fconsumo {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.GetIdconsumo());
+           pst.setInt(1, dts.getIdconsumo());
            
            int n=pst.executeUpdate();
            

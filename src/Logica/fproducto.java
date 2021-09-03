@@ -34,8 +34,8 @@ public class Fproducto {
                registro [0]=rs.getString("idproducto");
                registro [1]=rs.getString("nombre");
                registro [2]=rs.getString("descripcion");
-               registro [3]=rs.getString("unidad_medida");
-               registro [4]=rs.getString("precio_venta");
+               registro [3]=rs.getString("unidadmedida");
+               registro [4]=rs.getString("precioventa");
                
                
                totalregistros=totalregistros+1;
@@ -54,15 +54,15 @@ public class Fproducto {
    } 
    
    public boolean insertar (Vproducto dts){
-       sSQL="insert into producto (nombre,descripcion,unidad_medida,precio_venta)" +
+       sSQL="insert into producto (nombre,descripcion,unidadmedida,precioventa)" +
                "values (?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            pst.setString(1, dts.getNombre());
            pst.setString(2, dts.getDescripcion());
-           pst.setString(3, dts.getUnidad_medida());
-           pst.setDouble(4, dts.getPrecio_venta());
+           pst.setString(3, dts.getUnidadmedida());
+           pst.setDouble(4, dts.getPrecioventa());
            
            
            int n=pst.executeUpdate();
@@ -83,7 +83,7 @@ public class Fproducto {
    }
    
    public boolean editar (Vproducto dts){
-       sSQL="update producto set nombre=?,descripcion=?,unidad_medida=?,precio_venta=?"+
+       sSQL="update producto set nombre=?,descripcion=?,unidadmedida=?,precioventa=?"+
                " where idproducto=?";
            
        
@@ -91,8 +91,8 @@ public class Fproducto {
            PreparedStatement pst=cn.prepareStatement(sSQL);
            pst.setString(1, dts.getNombre());
            pst.setString(2, dts.getDescripcion());
-           pst.setString(3, dts.getUnidad_medida());
-           pst.setDouble(4, dts.getPrecio_venta());
+           pst.setString(3, dts.getUnidadmedida());
+           pst.setDouble(4, dts.getPrecioventa());
            
            pst.setInt(5, dts.getIdproducto());
            

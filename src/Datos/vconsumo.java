@@ -6,17 +6,17 @@ public class Vconsumo {
     private int idreserva;
     private int idproducto;
     private Double cantidad;
-    private Double precio_venta;
+    private Double precioventa;
     private String estado;
 
 
 
-    public Vconsumo(int idconsumo, int idreserva, int idproducto, Double cantidad, Double precio_venta, String estado) {
+    public Vconsumo(int idconsumo, int idreserva, int idproducto, Double cantidad, Double precioventa, String estado) {
         this.idconsumo = idconsumo;
         this.idreserva = idreserva;
         this.idproducto = idproducto;
         this.cantidad = cantidad;
-        this.precio_venta = precio_venta;
+        this.precioventa = precioventa;
         this.estado = estado;
     }
 
@@ -24,7 +24,7 @@ public class Vconsumo {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public int GetIdconsumo() {
+    public int getIdconsumo() {
         return idconsumo;
     }
 
@@ -32,7 +32,7 @@ public class Vconsumo {
         this.idconsumo = idconsumo;
     }
 
-    public int GetIdreserva() {
+    public int getIdreserva() {
         return idreserva;
     }
 
@@ -40,7 +40,7 @@ public class Vconsumo {
         this.idreserva = idreserva;
     }
 
-    public int GetIdproducto() {
+    public int getIdproducto() {
         return idproducto;
     }
 
@@ -48,7 +48,7 @@ public class Vconsumo {
         this.idproducto = idproducto;
     }
 
-    public Double GetCantidad() {
+    public Double getCantidad() {
         return cantidad;
     }
 
@@ -56,12 +56,12 @@ public class Vconsumo {
         this.cantidad = cantidad;
     }
 
-    public Double GetPrecio_venta() {
-        return precio_venta;
+    public Double getPrecioventa() {
+        return precioventa;
     }
 
-    public void setPrecio_venta(Double precio_venta) {
-        this.precio_venta = precio_venta;
+    public void setPrecioventa(Double precioventa) {
+        this.precioventa = precioventa;
     }
 
     public String getEstado() {

@@ -33,12 +33,12 @@ public class Fpago {
            while(rs.next()){
                registro [0]=rs.getString("idpago");
                registro [1]=rs.getString("idreserva");
-               registro [2]=rs.getString("tipo_comprobante");
-               registro [3]=rs.getString("num_comprobante");
+               registro [2]=rs.getString("tipocomprobante");
+               registro [3]=rs.getString("numcomprobante");
                registro [4]=rs.getString("igv");
-               registro [5]=rs.getString("total_pago");
-               registro [6]=rs.getString("fecha_emision");
-               registro [7]=rs.getString("fecha_pago");
+               registro [5]=rs.getString("totalpago");
+               registro [6]=rs.getString("fechaemision");
+               registro [7]=rs.getString("fechapago");
                
                totalregistros=totalregistros+1;
                modelo.addRow(registro);
@@ -56,18 +56,18 @@ public class Fpago {
    } 
    
    public boolean insertar (Vpago dts){
-       sSQL="insert into pago (idreserva,tipo_comprobante,num_comprobante,igv,total_pago,fecha_emision,fecha_pago)" +
+       sSQL="insert into pago (idreserva,tipocomprobante,numcomprobante,igv,totalpago,fechaemision,fechapago)" +
                "values (?,?,?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            pst.setInt(1, dts.getIdreserva());
-           pst.setString(2, dts.getTipo_comprobante());
-           pst.setString(3, dts.getNum_comprobante());
+           pst.setString(2, dts.getTipocomprobante());
+           pst.setString(3, dts.getNumcomprobante());
            pst.setDouble(4, dts.getIgv());
-           pst.setDouble(5, dts.getTotal_pago());
-           pst.setDate(6, dts.getFecha_emision());
-           pst.setDate(7, dts.getFecha_pago());
+           pst.setDouble(5, dts.getTotalpago());
+           pst.setDate(6, dts.getFechaemision());
+           pst.setDate(7, dts.getFechapago());
            
            
            int n=pst.executeUpdate();
@@ -88,19 +88,19 @@ public class Fpago {
    }
    
    public boolean editar (Vpago dts){
-       sSQL="update pago set idreserva=?,tipo_comprobante=?,num_comprobante=?,igv=?,total_pago=?,fecha_emision=?,fecha_pago=?"+
+       sSQL="update pago set idreserva=?,tipocomprobante=?,numcomprobante=?,igv=?,totalpago=?,fechaemision=?,fechapago=?"+
                " where idpago=?";
            
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
            pst.setInt(1, dts.getIdreserva());
-           pst.setString(2, dts.getTipo_comprobante());
-           pst.setString(3, dts.getNum_comprobante());
+           pst.setString(2, dts.getTipocomprobante());
+           pst.setString(3, dts.getNumcomprobante());
            pst.setDouble(4, dts.getIgv());
-           pst.setDouble(5, dts.getTotal_pago());
-           pst.setDate(6, dts.getFecha_emision());
-           pst.setDate(7, dts.getFecha_pago());
+           pst.setDouble(5, dts.getTotalpago());
+           pst.setDate(6, dts.getFechaemision());
+           pst.setDate(7, dts.getFechapago());
            
            pst.setInt(8, dts.getIdpago());
            

@@ -38,9 +38,9 @@ public class Fhabitacion {
                registro [2]=rs.getString("piso");
                registro [3]=rs.getString("descripcion");
                registro [4]=rs.getString("caracteristicas");
-               registro [5]=rs.getString("precio_diario");
+               registro [5]=rs.getString("preciodiario");
                registro [6]=rs.getString("estado");
-               registro [7]=rs.getString("tipo_habitacion");
+               registro [7]=rs.getString("tipohabitacion");
                
                totalregistros=totalregistros+1;
                modelo.addRow(registro);
@@ -77,9 +77,9 @@ public class Fhabitacion {
                registro [2]=rs.getString("piso");
                registro [3]=rs.getString("descripcion");
                registro [4]=rs.getString("caracteristicas");
-               registro [5]=rs.getString("precio_diario");
+               registro [5]=rs.getString("preciodiario");
                registro [6]=rs.getString("estado");
-               registro [7]=rs.getString("tipo_habitacion");
+               registro [7]=rs.getString("tipohabitacion");
                
                totalregistros=totalregistros+1;
                modelo.addRow(registro);
@@ -107,7 +107,7 @@ public class Fhabitacion {
    
    
    public boolean insertar (Vhabitacion dts){
-       sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion)" +
+       sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,preciodiario,estado,tipohabitacion)" +
                "values (?,?,?,?,?,?,?)";
        try {
            
@@ -116,9 +116,9 @@ public class Fhabitacion {
            pst.setString(2, dts.getPiso());
            pst.setString(3, dts.getDescripcion());
            pst.setString(4, dts.getCaracteristicas());
-           pst.setDouble(5, dts.getPrecio_diario());
+           pst.setDouble(5, dts.getPreciodiario());
            pst.setString(6, dts.getEstado());
-           pst.setString(7, dts.getTipo_habitacion());
+           pst.setString(7, dts.getTipohabitacion());
            
            int n=pst.executeUpdate();
            
@@ -138,7 +138,7 @@ public class Fhabitacion {
    }
    
    public boolean editar (Vhabitacion dts){
-       sSQL="update habitacion set numero=?,piso=?,descripcion=?,caracteristicas=?,precio_diario=?,estado=?,tipo_habitacion=?"+
+       sSQL="update habitacion set numero=?,piso=?,descripcion=?,caracteristicas=?,preciodiario=?,estado=?,tipohabitacion=?"+
                " where idhabitacion=?";
            
        
@@ -148,9 +148,9 @@ public class Fhabitacion {
            pst.setString(2, dts.getPiso());
            pst.setString(3, dts.getDescripcion());
            pst.setString(4, dts.getCaracteristicas());
-           pst.setDouble(5, dts.getPrecio_diario());
+           pst.setDouble(5, dts.getPreciodiario());
            pst.setString(6, dts.getEstado());
-           pst.setString(7, dts.getTipo_habitacion());
+           pst.setString(7, dts.getTipohabitacion());
            pst.setInt(8, dts.getIdhabitacion());
            
            int n=pst.executeUpdate();

@@ -15,7 +15,7 @@ public class Frmcliente extends javax.swing.JInternalFrame {
     }
        private String accion = "guardar";
 
-    void ocultar_columnas() {
+    void ocultarColumnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -84,7 +84,7 @@ public class Frmcliente extends javax.swing.JInternalFrame {
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
-            ocultar_columnas();
+            ocultarColumnas();
             lbltotalregistros.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {
@@ -543,8 +543,8 @@ public class Frmcliente extends javax.swing.JInternalFrame {
         dts.setApaterno(txtapaterno.getText());
         dts.setAmaterno(txtamaterno.getText());
         int seleccionado = cbotipo_documento.getSelectedIndex();
-        dts.setTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
-        dts.setNum_documento(txtnum_documento.getText());
+        dts.setTipodocumento((String) cbotipo_documento.getItemAt(seleccionado));
+        dts.setNumdocumento(txtnum_documento.getText());
         dts.setDireccion(txtdireccion.getText());
         dts.setTelefono(txttelefono.getText());
         dts.setEmail(txtemail.getText());

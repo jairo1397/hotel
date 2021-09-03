@@ -474,13 +474,13 @@ public class Frmhabitacion extends javax.swing.JInternalFrame {
         dts.setDescripcion(txtdescripcion.getText());
         dts.setCaracteristicas(txtcaracteristicas.getText());
         
-        dts.setPrecio_diario(Double.parseDouble(txtprecio_diario.getText()));
+        dts.setPreciodiario(Double.parseDouble(txtprecio_diario.getText()));
         
         seleccionado = cboestado.getSelectedIndex();
         dts.setEstado((String) cboestado.getItemAt(seleccionado));
         
         seleccionado = cbotipo_habitacion.getSelectedIndex();
-        dts.setTipo_habitacion((String) cbotipo_habitacion.getItemAt(seleccionado));
+        dts.setTipohabitacion((String) cbotipo_habitacion.getItemAt(seleccionado));
         
         
         if (accion.equals("guardar")) {
