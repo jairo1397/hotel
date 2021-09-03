@@ -1,17 +1,17 @@
 
 package Presentacion;
 import Datos.Vtrabajador;
-import Logica.ftrabajador;
+import Logica.Ftrabajador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class frmusuariologin extends javax.swing.JFrame {
+public class Frmusuariologin extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmusuariologin
+     * Creates new form Frmusuariologin
      */
-    public frmusuariologin() {
+    public Frmusuariologin() {
         initComponents();
        this.setTitle("Acceso al Sistema");
        this.setLocationRelativeTo(null);
@@ -153,7 +153,7 @@ public class frmusuariologin extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             DefaultTableModel modelo;
-            ftrabajador func =new ftrabajador();
+            Ftrabajador func =new Ftrabajador();
             Vtrabajador dts=new Vtrabajador();
             
             
@@ -167,17 +167,17 @@ public class frmusuariologin extends javax.swing.JFrame {
             
             if (func.totalregistros >0) {
                 this.dispose();
-                frminicio form = new frminicio();
+                Frminicio form = new Frminicio();
                 form.toFront();
                 form.setVisible(true);
-                frminicio.lblidpersona.setText(tablalistado.getValueAt(0, 0).toString());
-                frminicio.lblnombre.setText(tablalistado.getValueAt(0, 1).toString());
-                frminicio.lblapaterno.setText(tablalistado.getValueAt(0, 2).toString());
-                frminicio.lblamaterno.setText(tablalistado.getValueAt(0, 3).toString());
-                frminicio.lblacceso.setText(tablalistado.getValueAt(0, 4).toString());
-                if (!frminicio.lblacceso.getText().equals("Administrador")) {
-                    frminicio.mnuarchivo.setEnabled(false);
-                    frminicio.mnuconfiguraciones.setEnabled(false);
+                Frminicio.lblidpersona.setText(tablalistado.getValueAt(0, 0).toString());
+                Frminicio.lblnombre.setText(tablalistado.getValueAt(0, 1).toString());
+                Frminicio.lblapaterno.setText(tablalistado.getValueAt(0, 2).toString());
+                Frminicio.lblamaterno.setText(tablalistado.getValueAt(0, 3).toString());
+                Frminicio.lblacceso.setText(tablalistado.getValueAt(0, 4).toString());
+                if (!Frminicio.lblacceso.getText().equals("Administrador")) {
+                    Frminicio.mnuarchivo.setEnabled(false);
+                    Frminicio.mnuconfiguraciones.setEnabled(false);
                 }
      
             }
@@ -213,20 +213,20 @@ public class frmusuariologin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmusuariologin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmusuariologin().setVisible(true);
+                new Frmusuariologin().setVisible(true);
             }
         });
     }

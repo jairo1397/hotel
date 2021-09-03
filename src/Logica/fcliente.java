@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Fcliente {
 
-    private conexion mysql = new conexion();
+    private Conexion mysql = new Conexion();
     private Connection cn = mysql.conectar();
     private String sSQL = "";
     private String sSQL2 = "";

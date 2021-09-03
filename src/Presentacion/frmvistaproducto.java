@@ -2,16 +2,16 @@
 
 package Presentacion;
 
-import Logica.fproducto;
+import Logica.Fproducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmvistaproducto extends javax.swing.JFrame {
+public class Frmvistaproducto extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmvistaproducto
+     * Creates new form Frmvistaproducto
      */
-    public frmvistaproducto() {
+    public Frmvistaproducto() {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
@@ -26,7 +26,7 @@ public class frmvistaproducto extends javax.swing.JFrame {
 void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fproducto func = new fproducto();
+            Fproducto func = new Fproducto();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -188,9 +188,9 @@ void mostrar(String buscar) {
             valor1=tablalistado.getValueAt(fila,1).toString();
             valor2=tablalistado.getValueAt(fila,4).toString();
             
-            frmConsumo.txtidproducto.setText(cod);
-            frmConsumo.txtproducto.setText(valor1);
-            frmConsumo.txtprecio_venta.setText(valor2);
+            FrmConsumo.txtidproducto.setText(cod);
+            FrmConsumo.txtproducto.setText(valor1);
+            FrmConsumo.txtprecio_venta.setText(valor2);
             
             this.setVisible(false);
             
@@ -217,20 +217,20 @@ void mostrar(String buscar) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistaproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvistaproducto().setVisible(true);
+                new Frmvistaproducto().setVisible(true);
             }
         });
     }

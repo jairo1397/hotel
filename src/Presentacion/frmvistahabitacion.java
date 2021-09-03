@@ -2,16 +2,16 @@
 
 package Presentacion;
 
-import Logica.fhabitacion;
+import Logica.Fhabitacion;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmvistahabitacion extends javax.swing.JFrame {
+public class Frmvistahabitacion extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmvistahabitacion
+     * Creates new form Frmvistahabitacion
      */
-    public frmvistahabitacion() {
+    public Frmvistahabitacion() {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
@@ -28,7 +28,7 @@ public class frmvistahabitacion extends javax.swing.JFrame {
      void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fhabitacion func = new fhabitacion();
+            Fhabitacion func = new Fhabitacion();
             modelo = func.mostrarvista(buscar);
 
             tablalistado.setModel(modelo);
@@ -168,8 +168,8 @@ public class frmvistahabitacion extends javax.swing.JFrame {
             cod=tablalistado.getValueAt(fila, 0).toString();
             valor=tablalistado.getValueAt(fila, 1).toString();
             
-            frmreserva.txtidhabitacion.setText(cod);
-            frmreserva.txtnumero.setText(valor);
+            Frmreserva.txtidhabitacion.setText(cod);
+            Frmreserva.txtnumero.setText(valor);
             this.dispose();
             
         }
@@ -192,20 +192,20 @@ public class frmvistahabitacion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistahabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvistahabitacion().setVisible(true);
+                new Frmvistahabitacion().setVisible(true);
             }
         });
     }

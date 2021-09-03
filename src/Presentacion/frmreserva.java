@@ -1,19 +1,19 @@
 package Presentacion;
 import Datos.Vhabitacion;
 import Datos.Vreserva;
-import Logica.fhabitacion;
-import Logica.freserva;
+import Logica.Fhabitacion;
+import Logica.Freserva;
 import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmreserva extends javax.swing.JInternalFrame {
+public class Frmreserva extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form frmreserva
      */
-    public frmreserva() {
+    public Frmreserva() {
         initComponents();
         mostrar("");
         inhabilitar();
@@ -115,7 +115,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            freserva func = new freserva();
+            Freserva func = new Freserva();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -630,7 +630,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
         }
 
         Vreserva dts = new Vreserva();
-        freserva func = new freserva();
+        Freserva func = new Freserva();
         
         dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
         dts.SetIdcliente(Integer.parseInt(txtidcliente.getText()));
@@ -681,7 +681,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 inhabilitar();
                 
                 //ocupamos la Habitación alquilada
-                fhabitacion func3= new fhabitacion();
+                Fhabitacion func3= new Fhabitacion();
                 Vhabitacion dts3 = new Vhabitacion();
                 
                 dts3.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
@@ -742,7 +742,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar la Reserva?","Confirmar",2);
 
             if (confirmacion==0) {
-                freserva func = new freserva ();
+                Freserva func = new Freserva ();
                 Vreserva dts= new Vreserva();
 
                 dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
@@ -786,7 +786,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
 
     private void btnbuscahabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscahabitacionActionPerformed
         // TODO add your handling code here:
-        frmvistahabitacion form = new frmvistahabitacion();
+        Frmvistahabitacion form = new Frmvistahabitacion();
         form.toFront();
         form.setVisible(true);
         
@@ -802,12 +802,12 @@ public class frmreserva extends javax.swing.JInternalFrame {
     private void btnverconsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnverconsumoActionPerformed
         // TODO add your handling code here:
         int fila = tablalistado.getSelectedRow();
-        frmConsumo.idreserva= tablalistado.getValueAt(fila, 0).toString();
-        frmConsumo.cliente=tablalistado.getValueAt(fila, 4).toString();
+        FrmConsumo.idreserva= tablalistado.getValueAt(fila, 0).toString();
+        FrmConsumo.cliente=tablalistado.getValueAt(fila, 4).toString();
         
         
-        frmConsumo form = new frmConsumo();
-        frminicio.escritorio.add(form);
+        FrmConsumo form = new FrmConsumo();
+        Frminicio.escritorio.add(form);
         form.toFront();
         form.setVisible(true);
     }//GEN-LAST:event_btnverconsumoActionPerformed
@@ -816,15 +816,15 @@ public class frmreserva extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int fila = tablalistado.getSelectedRow();
         
-        frmPago.idreserva = tablalistado.getValueAt(fila, 0).toString();
-        frmPago.cliente = tablalistado.getValueAt(fila, 4).toString();
-        frmPago.totalreserva =Double.parseDouble( tablalistado.getValueAt(fila, 11).toString());
+        FrmPago.idreserva = tablalistado.getValueAt(fila, 0).toString();
+        FrmPago.cliente = tablalistado.getValueAt(fila, 4).toString();
+        FrmPago.totalreserva =Double.parseDouble( tablalistado.getValueAt(fila, 11).toString());
         
-        frmPago.idhabitacion = tablalistado.getValueAt(fila, 1).toString();
-        frmPago.habitacion = tablalistado.getValueAt(fila, 2).toString();
+        FrmPago.idhabitacion = tablalistado.getValueAt(fila, 1).toString();
+        FrmPago.habitacion = tablalistado.getValueAt(fila, 2).toString();
         
-        frmPago form = new frmPago();
-        frminicio.escritorio.add(form);
+        FrmPago form = new FrmPago();
+        Frminicio.escritorio.add(form);
         form.toFront();
         form.setVisible(true);
         
@@ -849,20 +849,20 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmreserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmreserva().setVisible(true);
+                new Frmreserva().setVisible(true);
             }
         });
     }

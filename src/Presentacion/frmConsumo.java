@@ -1,15 +1,16 @@
 package Presentacion;
 import Datos.Vconsumo;
-import Logica.fconsumo;
+import Logica.Fconsumo;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-public class frmConsumo extends javax.swing.JInternalFrame {
+public class FrmConsumo extends javax.swing.JInternalFrame {
 public static String idreserva;
-public static String cliente;        
+public static String cliente;  
+private String accion = "guardar";
     /**
-     * Creates new form frmConsumo
+     * Creates new form FrmConsumo
      */
-    public frmConsumo() {
+    public FrmConsumo() {
         initComponents();
         mostrar(idreserva);
         txtcliente.setText(cliente);
@@ -17,7 +18,7 @@ public static String cliente;
         inhabilitar();
         
     }
-     private String accion = "guardar";
+     
 
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -86,7 +87,7 @@ public static String cliente;
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fconsumo func = new fconsumo();
+            Fconsumo func = new Fconsumo();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -470,7 +471,7 @@ public static String cliente;
         }
 
         Vconsumo dts = new Vconsumo();
-        fconsumo func = new fconsumo();
+        Fconsumo func = new Fconsumo();
 
         dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
         dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
@@ -534,7 +535,7 @@ public static String cliente;
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar el Producto?","Confirmar",2);
 
             if (confirmacion==0) {
-                fconsumo func = new fconsumo ();
+                Fconsumo func = new Fconsumo ();
                 Vconsumo dts= new Vconsumo();
 
                 dts.SetIdconsumo(Integer.parseInt(txtidconsumo.getText()));
@@ -562,7 +563,7 @@ public static String cliente;
 
     private void btnbuscarproductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarproductoActionPerformed
         // TODO add your handling code here:
-        frmvistaproducto form = new frmvistaproducto();
+        Frmvistaproducto form = new Frmvistaproducto();
         form.toFront();
         form.setVisible(true);
     }//GEN-LAST:event_btnbuscarproductoActionPerformed
@@ -584,20 +585,20 @@ public static String cliente;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmConsumo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmConsumo().setVisible(true);
+                new FrmConsumo().setVisible(true);
             }
         });
     }

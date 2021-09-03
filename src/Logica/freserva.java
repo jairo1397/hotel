@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-public class freserva {
+public class Freserva {
     
-   private conexion mysql=new conexion();
+   private Conexion mysql=new Conexion();
    private Connection cn=mysql.conectar();
    private String sSQL="";
    public Integer totalregistros;

@@ -1,12 +1,12 @@
 package Presentacion;
 import Datos.Vproducto;
-import Logica.fproducto;
+import Logica.Fproducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-public class frmproducto extends javax.swing.JInternalFrame {
+public class Frmproducto extends javax.swing.JInternalFrame {
 
     
-    public frmproducto() {
+    public Frmproducto() {
         initComponents();
         mostrar("");
         inhabilitar();
@@ -64,7 +64,7 @@ public class frmproducto extends javax.swing.JInternalFrame {
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fproducto func = new fproducto();
+            Fproducto func = new Fproducto();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -416,7 +416,7 @@ public class frmproducto extends javax.swing.JInternalFrame {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar el Producto?","Confirmar",2);
 
             if (confirmacion==0) {
-                fproducto func = new fproducto ();
+                Fproducto func = new Fproducto ();
                 Vproducto dts= new Vproducto();
 
                 dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
@@ -479,7 +479,7 @@ public class frmproducto extends javax.swing.JInternalFrame {
       
 
         Vproducto dts = new Vproducto();
-        fproducto func = new fproducto();
+        Fproducto func = new Fproducto();
 
         dts.SetNombre(txtnombre.getText());
 
@@ -538,20 +538,20 @@ public class frmproducto extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmproducto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmproducto().setVisible(true);
+                new Frmproducto().setVisible(true);
             }
         });
     }

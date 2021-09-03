@@ -1,23 +1,23 @@
 package Presentacion;
 import Datos.Vtrabajador;
-import Logica.ftrabajador;
+import Logica.Ftrabajador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class frmtrabajador extends javax.swing.JInternalFrame {
-
+public class Frmtrabajador extends javax.swing.JInternalFrame {
+   private String accion = "guardar";
     /**
      * Creates new form frmcliente
      */
-    public frmtrabajador() {
+    public Frmtrabajador() {
         initComponents();
         mostrar("");
         inhabilitar();
     }
-       private String accion = "guardar";
+    
 
-    void ocultar_columnas() {
+    void ocultarColumnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -94,11 +94,11 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            ftrabajador func = new ftrabajador();
+            Ftrabajador func = new Ftrabajador();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
-            ocultar_columnas();
+            ocultarColumnas();
             lbltotalregistros.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {
@@ -624,7 +624,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
         
 
         Vtrabajador dts = new Vtrabajador();
-        ftrabajador func = new ftrabajador();
+        Ftrabajador func = new Ftrabajador();
 
         dts.SetNombre(txtnombre.getText());
 
@@ -710,7 +710,7 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar el Trabajador?","Confirmar",2);
 
             if (confirmacion==0) {
-                ftrabajador func = new ftrabajador();
+                Ftrabajador func = new Ftrabajador();
                 Vtrabajador dts= new Vtrabajador();
 
                 dts.SetIdpersona(Integer.parseInt(txtidpersona.getText()));
@@ -783,20 +783,20 @@ public class frmtrabajador extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmtrabajador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmtrabajador().setVisible(true);
+                new Frmtrabajador().setVisible(true);
             }
         });
     }

@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-public class conexion {
+public class Conexion {
     public String db="hoteltw";
     public String url="jdbc:mysql://localhost:3306/hoteltw?useSSL=false"; //+db;
     public String user="root";

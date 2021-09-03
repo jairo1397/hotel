@@ -1,13 +1,13 @@
 
 package Presentacion;
-public class frminicio extends javax.swing.JFrame {
+public class Frminicio extends javax.swing.JFrame {
 
     /**
-     * Creates new form frminicio
+     * Creates new form Frminicio
      */
-    public frminicio() {
+    public Frminicio() {
         initComponents();
-        this.setExtendedState(frminicio.MAXIMIZED_BOTH);
+        this.setExtendedState(Frminicio.MAXIMIZED_BOTH);
         this.setTitle("HOTEL TAMPU WASI");
     }
 
@@ -214,7 +214,7 @@ public class frminicio extends javax.swing.JFrame {
 
     private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
         // TODO add your handling code here:
-        frmhabitacion form =new frmhabitacion();
+        Frmhabitacion form =new Frmhabitacion();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
@@ -222,7 +222,7 @@ public class frminicio extends javax.swing.JFrame {
 
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
         // TODO add your handling code here:
-        frmproducto form =new frmproducto();
+        Frmproducto form =new Frmproducto();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
@@ -231,7 +231,7 @@ public class frminicio extends javax.swing.JFrame {
 
     private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
         // TODO add your handling code here:
-        frmcliente form =new frmcliente();
+        Frmcliente form =new Frmcliente();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
@@ -239,7 +239,7 @@ public class frminicio extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        frmtrabajador form =new frmtrabajador();
+        Frmtrabajador form =new Frmtrabajador();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
@@ -248,19 +248,19 @@ public class frminicio extends javax.swing.JFrame {
     private void mnusalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnusalirMouseClicked
         // TODO add your handling code here:
         this.dispose();
-        frmusuariologin u = new frmusuariologin();
+        Frmusuariologin u = new Frmusuariologin();
         u.setVisible(true);
     }//GEN-LAST:event_mnusalirMouseClicked
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
         // TODO add your handling code here:
-        frmreserva form = new frmreserva();
+        Frmreserva form = new Frmreserva();
         escritorio.add(form);
         form.toFront();
         form.setVisible(true);
-        frmreserva.txtidtrabajador.setText(lblidpersona.getText());
-        frmreserva.txttrabajador.setText(lblnombre.getText() + " " + lblapaterno.getText());
-        frmreserva.idusuario=Integer.parseInt(lblidpersona.getText());
+        Frmreserva.txtidtrabajador.setText(lblidpersona.getText());
+        Frmreserva.txttrabajador.setText(lblnombre.getText() + " " + lblapaterno.getText());
+        Frmreserva.idusuario=Integer.parseInt(lblidpersona.getText());
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
     /**
@@ -280,20 +280,20 @@ public class frminicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frminicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frminicio().setVisible(true);
+                new Frminicio().setVisible(true);
             }
         });
     }

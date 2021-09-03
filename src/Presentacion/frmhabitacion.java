@@ -1,13 +1,13 @@
 package Presentacion;
 import Datos.Vhabitacion;
-import Logica.conexion;
-import Logica.fhabitacion;
+import Logica.Conexion;
+import Logica.Fhabitacion;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-public class frmhabitacion extends javax.swing.JInternalFrame {
+public class Frmhabitacion extends javax.swing.JInternalFrame {
 
-    public frmhabitacion() {
+    public Frmhabitacion() {
         initComponents();
         mostrar("");
         inhabilitar();
@@ -68,7 +68,7 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fhabitacion func = new fhabitacion();
+            Fhabitacion func = new Fhabitacion();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -464,7 +464,7 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
         }
 
         Vhabitacion dts = new Vhabitacion();
-        fhabitacion func = new fhabitacion();
+        Fhabitacion func = new Fhabitacion();
 
         dts.SetNumero(txtnumero.getText());
 
@@ -518,7 +518,7 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar la Habitación?","Confirmar",2);
             
             if (confirmacion==0) {
-                fhabitacion func = new fhabitacion ();
+                Fhabitacion func = new Fhabitacion ();
                 Vhabitacion dts= new Vhabitacion();
                 
                 dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
@@ -598,7 +598,7 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btncancelarActionPerformed
     
-   private Connection connection=new conexion().conectar();
+   private Connection connection=new Conexion().conectar();
     
     /**
      * @param args the command line arguments
@@ -617,20 +617,20 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmhabitacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmhabitacion().setVisible(true);
+                new Frmhabitacion().setVisible(true);
             }
         });
     }

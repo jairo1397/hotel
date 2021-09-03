@@ -2,18 +2,18 @@ package Presentacion;
 import Datos.Vhabitacion;
 import Datos.Vpago;
 import Datos.Vreserva;
-import Logica.conexion;
-import Logica.fconsumo;
-import Logica.fhabitacion;
-import Logica.fpago;
-import Logica.freserva;
+import Logica.Conexion;
+import Logica.Fconsumo;
+import Logica.Fhabitacion;
+import Logica.Fpago;
+import Logica.Freserva;
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmPago extends javax.swing.JInternalFrame {
+public class FrmPago extends javax.swing.JInternalFrame {
     private String accion = "guardar";
     public static String idreserva;
     public static String cliente;
@@ -22,9 +22,9 @@ public class frmPago extends javax.swing.JInternalFrame {
     public static Double totalreserva;
     
     /**
-     * Creates new form frmPago
+     * Creates new form FrmPago
      */
-    public frmPago() {
+    public FrmPago() {
         initComponents();
         mostrar(idreserva);
         inhabilitar();
@@ -34,7 +34,7 @@ public class frmPago extends javax.swing.JInternalFrame {
         txtidhabitacion.setText(idhabitacion);
         txttotalreserva.setText(Double.toString(totalreserva));
         
-        fconsumo func = new fconsumo();
+        Fconsumo func = new Fconsumo();
         func.mostrar(idreserva);
         
         txttotal_pago.setText(Double.toString(totalreserva + func.totalconsumo));
@@ -125,7 +125,7 @@ public class frmPago extends javax.swing.JInternalFrame {
     void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fpago func = new fpago();
+            Fpago func = new Fpago();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
@@ -133,7 +133,7 @@ public class frmPago extends javax.swing.JInternalFrame {
             lbltotalregistros.setText("Total Pagos " + Integer.toString(func.totalregistros));
             
             //Mostrar los datos de los consumos
-            fconsumo func2 = new fconsumo();
+            Fconsumo func2 = new Fconsumo();
             modelo= func2.mostrar(buscar);
             tablalistadoconsumo.setModel(modelo);
             ocultar_columnasconsumo();
@@ -601,7 +601,7 @@ public class frmPago extends javax.swing.JInternalFrame {
         }
 
         Vpago dts = new Vpago();
-        fpago func = new fpago();
+        Fpago func = new Fpago();
 
         dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
 
@@ -644,7 +644,7 @@ public class frmPago extends javax.swing.JInternalFrame {
                 inhabilitar();
                 
                 //Desocupar la Habitación
-                fhabitacion func2 = new fhabitacion();
+                Fhabitacion func2 = new Fhabitacion();
                 Vhabitacion dts2 = new Vhabitacion();
                 
                 dts2.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
@@ -652,7 +652,7 @@ public class frmPago extends javax.swing.JInternalFrame {
                 
                 //Cancelar o pagar la reserva
                 
-                freserva func3 = new freserva();
+                Freserva func3 = new Freserva();
                 Vreserva dts3 = new Vreserva();
                 
                 dts3.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
@@ -707,7 +707,7 @@ public class frmPago extends javax.swing.JInternalFrame {
             int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar el Pago seleccionado?","Confirmar",2);
 
             if (confirmacion==0) {
-                fpago func = new fpago ();
+                Fpago func = new Fpago ();
                 Vpago dts= new Vpago();
 
                 dts.SetIdpago(Integer.parseInt(txtidpago.getText()));
@@ -741,7 +741,7 @@ public class frmPago extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tablalistadoconsumoMouseClicked
 
-    private Connection connection=new conexion().conectar();
+    private Connection connection=new Conexion().conectar();
     
     
     
@@ -762,20 +762,20 @@ public class frmPago extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmPago().setVisible(true);
+                new FrmPago().setVisible(true);
             }
         });
     }

@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class fhabitacion {
+public class Fhabitacion {
     
-   private conexion mysql=new conexion();
+   private Conexion mysql=new Conexion();
    private Connection cn=mysql.conectar();
    private String sSQL="";
    public Integer totalregistros;
