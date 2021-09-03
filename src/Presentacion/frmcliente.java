@@ -1,6 +1,6 @@
-package Presentacion;
-import Datos.Vcliente;
-import Logica.Fcliente;
+package presentacion;
+import datos.Vcliente;
+import logica.Fcliente;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Frmcliente extends javax.swing.JInternalFrame {
@@ -548,7 +548,7 @@ public class Frmcliente extends javax.swing.JInternalFrame {
         dts.setDireccion(txtdireccion.getText());
         dts.setTelefono(txttelefono.getText());
         dts.setEmail(txtemail.getText());
-        dts.setCodigo_cliente(txtcodigo_cliente.getText());
+        dts.setCodigocliente(txtcodigo_cliente.getText());
         
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {

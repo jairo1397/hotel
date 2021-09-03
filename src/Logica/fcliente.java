@@ -1,5 +1,5 @@
-package Logica;
-import Datos.Vcliente;
+package logica;
+import datos.Vcliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -77,7 +77,7 @@ public class Fcliente {
             pst.setString(7, dts.getTelefono());
             pst.setString(8, dts.getEmail());
 
-            pst2.setString(1, dts.getCodigo_cliente());
+            pst2.setString(1, dts.getCodigocliente());
 
             int n = pst.executeUpdate();
 
@@ -87,13 +87,13 @@ public class Fcliente {
                 if (n2 != 0) {
                     return true;
 
-                } else {
-                    return false;
                 }
+                    return false;
+                
 
-            } else {
+            } 
                 return false;
-            }
+            
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
@@ -122,7 +122,7 @@ public class Fcliente {
             pst.setString(8, dts.getEmail());
             pst.setInt(9, dts.getIdpersona());
 
-            pst2.setString(1, dts.getCodigo_cliente());
+            pst2.setString(1, dts.getCodigocliente());
             pst2.setInt(2, dts.getIdpersona());
 
             int n = pst.executeUpdate();
@@ -133,13 +133,13 @@ public class Fcliente {
                 if (n2 != 0) {
                     return true;
 
-                } else {
+                } 
                     return false;
-                }
+                
 
-            } else {
+            } 
                 return false;
-            }
+            
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);

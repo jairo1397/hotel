@@ -1,5 +1,5 @@
 
-package Datos;
+package datos;
 
 
 public class Vproducto {

@@ -1,8 +1,8 @@
 
 
-package Presentacion;
+package presentacion;
 
-import Logica.Fcliente;
+import logica.Fcliente;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

@@ -1,5 +1,5 @@
-package Logica;
-import Datos.Vconsumo;
+package logica;
+import datos.Vconsumo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -80,9 +80,9 @@ public class Fconsumo {
            if (n!=0){
                return true;
            }
-           else {
+           
                return false;
-           }
+           
            
            
            

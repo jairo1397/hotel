@@ -1,6 +1,6 @@
 
 
-package Datos;
+package datos;
 
 public class Vtrabajador extends Vpersona{
      Double sueldo;

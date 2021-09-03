@@ -1,8 +1,8 @@
 
 
-package Presentacion;
+package presentacion;
 
-import Logica.Fhabitacion;
+import logica.Fhabitacion;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

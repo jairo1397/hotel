@@ -1,5 +1,5 @@
-package Logica;
-import Datos.Vreserva;
+package logica;
+import datos.Vreserva;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -88,9 +88,9 @@ public class Freserva {
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
            
            
@@ -124,9 +124,8 @@ public class Freserva {
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -150,9 +149,9 @@ public class Freserva {
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+           
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -179,9 +178,9 @@ public class Freserva {
            if (n!=0){
                return true;
            }
-           else {
+         
                return false;
-           }
+           
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);

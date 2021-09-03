@@ -1,5 +1,5 @@
-package Logica;
-import Datos.Vproducto;
+package logica;
+import datos.Vproducto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

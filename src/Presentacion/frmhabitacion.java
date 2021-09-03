@@ -1,7 +1,7 @@
-package Presentacion;
-import Datos.Vhabitacion;
-import Logica.Conexion;
-import Logica.Fhabitacion;
+package presentacion;
+import datos.Vhabitacion;
+import logica.Conexion;
+import logica.Fhabitacion;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

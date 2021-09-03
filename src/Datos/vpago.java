@@ -1,5 +1,5 @@
 
-package Datos;
+package datos;
 
 import java.sql.Date;
 

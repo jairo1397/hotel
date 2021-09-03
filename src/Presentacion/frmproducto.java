@@ -1,6 +1,6 @@
-package Presentacion;
-import Datos.Vproducto;
-import Logica.Fproducto;
+package presentacion;
+import datos.Vproducto;
+import logica.Fproducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Frmproducto extends javax.swing.JInternalFrame {

@@ -1,5 +1,5 @@
-package Logica;
-import Datos.Vpago;
+package logica;
+import datos.Vpago;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

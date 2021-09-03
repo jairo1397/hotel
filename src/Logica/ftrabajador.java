@@ -1,5 +1,5 @@
-package Logica;
-import Datos.Vtrabajador;
+package logica;
+import datos.Vtrabajador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -140,13 +140,13 @@ public class Ftrabajador {
                 if (n2 != 0) {
                     return true;
 
-                } else {
-                    return false;
                 }
+                    return false;
+                
 
-            } else {
+            } 
                 return false;
-            }
+            
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
@@ -177,13 +177,13 @@ public class Ftrabajador {
                 if (n2 != 0) {
                     return true;
 
-                } else {
+                } 
                     return false;
-                }
+                
 
-            } else {
+            } 
                 return false;
-            }
+            
 
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);

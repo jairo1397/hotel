@@ -1,8 +1,8 @@
-package Presentacion;
-import Datos.Vhabitacion;
-import Datos.Vreserva;
-import Logica.Fhabitacion;
-import Logica.Freserva;
+package presentacion;
+import datos.Vhabitacion;
+import datos.Vreserva;
+import logica.Fhabitacion;
+import logica.Freserva;
 import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;

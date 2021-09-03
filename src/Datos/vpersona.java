@@ -1,5 +1,5 @@
 
-package Datos;
+package datos;
 
 public class Vpersona {
     private int idpersona;

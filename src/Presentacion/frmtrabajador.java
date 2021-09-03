@@ -1,6 +1,6 @@
-package Presentacion;
-import Datos.Vtrabajador;
-import Logica.Ftrabajador;
+package presentacion;
+import datos.Vtrabajador;
+import logica.Ftrabajador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

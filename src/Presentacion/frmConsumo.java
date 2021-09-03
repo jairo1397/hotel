@@ -1,6 +1,6 @@
-package Presentacion;
-import Datos.Vconsumo;
-import Logica.Fconsumo;
+package presentacion;
+import datos.Vconsumo;
+import logica.Fconsumo;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class FrmConsumo extends javax.swing.JInternalFrame {

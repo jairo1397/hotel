@@ -1,6 +1,6 @@
 
 
-package Datos;
+package datos;
 
 public class Vhabitacion {
     private int idhabitacion;
