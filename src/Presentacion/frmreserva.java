@@ -632,12 +632,12 @@ public class Frmreserva extends javax.swing.JInternalFrame {
         Vreserva dts = new Vreserva();
         Freserva func = new Freserva();
         
-        dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
-        dts.SetIdcliente(Integer.parseInt(txtidcliente.getText()));
-        dts.SetIdtrabajador(idusuario);
+        dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+        dts.setIdcliente(Integer.parseInt(txtidcliente.getText()));
+        dts.setIdtrabajador(idusuario);
         
         int seleccionado = cbotipo_reserva.getSelectedIndex();
-        dts.SetTipo_reserva((String) cbotipo_reserva.getItemAt(seleccionado));
+        dts.setTipo_reserva((String) cbotipo_reserva.getItemAt(seleccionado));
         
         Calendar cal;
         int d;
@@ -647,23 +647,23 @@ public class Frmreserva extends javax.swing.JInternalFrame {
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.SetFecha_reserva(new Date(a,m,d));
+        dts.setFecha_reserva(new Date(a,m,d));
         
         cal=dcfecha_ingresa.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.SetFecha_ingresa(new Date(a,m,d));
+        dts.setFecha_ingresa(new Date(a,m,d));
         
         cal=dcfecha_salida.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.SetFecha_salida(new Date(a,m,d));
+        dts.setFecha_salida(new Date(a,m,d));
         
-        dts.SetCosto_alojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
+        dts.setCosto_alojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
         seleccionado = cboestado.getSelectedIndex();
-        dts.SetEstado((String) cboestado.getItemAt(seleccionado));
+        dts.setEstado((String) cboestado.getItemAt(seleccionado));
         
         
         
@@ -684,14 +684,14 @@ public class Frmreserva extends javax.swing.JInternalFrame {
                 Fhabitacion func3= new Fhabitacion();
                 Vhabitacion dts3 = new Vhabitacion();
                 
-                dts3.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts3.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func3.ocupar(dts3);
             }
 
         }
         else if (accion.equals("editar")){
-            dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
-            dts.SetIdtrabajador(Integer.parseInt(txtidtrabajador.getText()));            
+            dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
+            dts.setIdtrabajador(Integer.parseInt(txtidtrabajador.getText()));            
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "La reserva fue Editada satisfactoriamente");
                 mostrar("");
@@ -745,7 +745,7 @@ public class Frmreserva extends javax.swing.JInternalFrame {
                 Freserva func = new Freserva ();
                 Vreserva dts= new Vreserva();
 
-                dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
+                dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();

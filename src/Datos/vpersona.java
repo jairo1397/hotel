@@ -28,75 +28,75 @@ public class Vpersona {
         this.email = email;
     }
 
-    public int GetIdpersona() {
+    public int getIdpersona() {
         return idpersona;
     }
 
-    public void SetIdpersona(int idpersona) {
+    public void setIdpersona(int idpersona) {
         this.idpersona = idpersona;
     }
 
-    public String GetNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void SetNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String GetApaterno() {
+    public String getApaterno() {
         return apaterno;
     }
 
-    public void SetApaterno(String apaterno) {
+    public void setApaterno(String apaterno) {
         this.apaterno = apaterno;
     }
 
-    public String GetAmaterno() {
+    public String getAmaterno() {
         return amaterno;
     }
 
-    public void SetAmaterno(String amaterno) {
+    public void setAmaterno(String amaterno) {
         this.amaterno = amaterno;
     }
 
-    public String GetTipo_documento() {
+    public String getTipo_documento() {
         return tipo_documento;
     }
 
-    public void SetTipo_documento(String tipo_documento) {
+    public void setTipo_documento(String tipo_documento) {
         this.tipo_documento = tipo_documento;
     }
 
-    public String GetNum_documento() {
+    public String getNum_documento() {
         return num_documento;
     }
 
-    public void SetNum_documento(String num_documento) {
+    public void setNum_documento(String num_documento) {
         this.num_documento = num_documento;
     }
 
-    public String GetDireccion() {
+    public String getDireccion() {
         return direccion;
     }
 
-    public void SetDireccion(String direccion) {
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    public String GetTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void SetTelefono(String telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public String GetEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void SetEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
     

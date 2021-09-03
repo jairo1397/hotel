@@ -157,11 +157,11 @@ public class Frmusuariologin extends javax.swing.JFrame {
             Vtrabajador dts=new Vtrabajador();
             
             
-            dts.SetLogin(txtusuario.getText());
-            dts.SetPassword(txtpassword.getText());
+            dts.setLogin(txtusuario.getText());
+            dts.setPassword(txtpassword.getText());
             
             
-            modelo=func.login(dts.GetLogin(),dts.GetPassword());
+            modelo=func.login(dts.getLogin(),dts.getPassword());
             
             tablalistado.setModel(modelo);
             

@@ -29,67 +29,67 @@ public class Vhabitacion {
 
 
 
-    public int GetIdhabitacion() {
+    public int getIdhabitacion() {
         return idhabitacion;
     }
 
-    public void SetIdhabitacion(int idhabitacion) {
+    public void setIdhabitacion(int idhabitacion) {
         this.idhabitacion = idhabitacion;
     }
 
-    public String GetNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void SetNumero(String numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public String GetPiso() {
+    public String getPiso() {
         return piso;
     }
 
-    public void SetPiso(String piso) {
+    public void setPiso(String piso) {
         this.piso = piso;
     }
 
-    public String GetDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void SetDescripcion(String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String GetCaracteristicas() {
+    public String getCaracteristicas() {
         return caracteristicas;
     }
 
-    public void SetCaracteristicas(String caracteristicas) {
+    public void setCaracteristicas(String caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
 
-    public Double GetPrecio_diario() {
+    public Double getPrecio_diario() {
         return precio_diario;
     }
 
-    public void SetPrecio_diario(Double precio_diario) {
+    public void setPrecio_diario(Double precio_diario) {
         this.precio_diario = precio_diario;
     }
 
-    public String GetEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void SetEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public String GetTipo_habitacion() {
+    public String getTipo_habitacion() {
         return tipo_habitacion;
     }
 
-    public void SetTipo_habitacion(String tipo_habitacion) {
+    public void setTipo_habitacion(String tipo_habitacion) {
         this.tipo_habitacion = tipo_habitacion;
     }
     

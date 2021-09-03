@@ -73,15 +73,15 @@ public class Freserva {
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.GetIdhabitacion());
-           pst.setInt(2, dts.GetIdcliente());
-           pst.setInt(3, dts.GetIdtrabajador());
-           pst.setString(4, dts.GetTipo_reserva());
-           pst.setDate(5, dts.GetFecha_reserva());
-           pst.setDate(6, dts.GetFecha_ingresa());
-           pst.setDate(7, dts.GetFecha_salida());
-           pst.setDouble(8, dts.GetCosto_alojamiento());
-           pst.setString(9, dts.GetEstado());
+           pst.setInt(1, dts.getIdhabitacion());
+           pst.setInt(2, dts.getIdcliente());
+           pst.setInt(3, dts.getIdtrabajador());
+           pst.setString(4, dts.getTipo_reserva());
+           pst.setDate(5, dts.getFecha_reserva());
+           pst.setDate(6, dts.getFecha_ingresa());
+           pst.setDate(7, dts.getFecha_salida());
+           pst.setDouble(8, dts.getCosto_alojamiento());
+           pst.setString(9, dts.getEstado());
            
            int n=pst.executeUpdate();
            
@@ -107,17 +107,17 @@ public class Freserva {
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-             pst.setInt(1, dts.GetIdhabitacion());
-           pst.setInt(2, dts.GetIdcliente());
-           pst.setInt(3, dts.GetIdtrabajador());
-           pst.setString(4, dts.GetTipo_reserva());
-           pst.setDate(5, dts.GetFecha_reserva());
-           pst.setDate(6, dts.GetFecha_ingresa());
-           pst.setDate(7, dts.GetFecha_salida());
-           pst.setDouble(8, dts.GetCosto_alojamiento());
-           pst.setString(9, dts.GetEstado());
+             pst.setInt(1, dts.getIdhabitacion());
+           pst.setInt(2, dts.getIdcliente());
+           pst.setInt(3, dts.getIdtrabajador());
+           pst.setString(4, dts.getTipo_reserva());
+           pst.setDate(5, dts.getFecha_reserva());
+           pst.setDate(6, dts.getFecha_ingresa());
+           pst.setDate(7, dts.getFecha_salida());
+           pst.setDouble(8, dts.getCosto_alojamiento());
+           pst.setString(9, dts.getEstado());
            
-           pst.setInt(10, dts.GetIdreserva());
+           pst.setInt(10, dts.getIdreserva());
            
            int n=pst.executeUpdate();
            
@@ -143,7 +143,7 @@ public class Freserva {
            PreparedStatement pst=cn.prepareStatement(sSQL);
              
            
-           pst.setInt(1, dts.GetIdreserva());
+           pst.setInt(1, dts.getIdreserva());
            
            int n=pst.executeUpdate();
            
@@ -172,7 +172,7 @@ public class Freserva {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.GetIdreserva());
+           pst.setInt(1, dts.getIdreserva());
            
            int n=pst.executeUpdate();
            

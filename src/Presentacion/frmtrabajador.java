@@ -626,26 +626,23 @@ public class Frmtrabajador extends javax.swing.JInternalFrame {
         Vtrabajador dts = new Vtrabajador();
         Ftrabajador func = new Ftrabajador();
 
-        dts.SetNombre(txtnombre.getText());
-
-        dts.SetApaterno(txtapaterno.getText());
-        dts.SetAmaterno(txtamaterno.getText());
-        
+        dts.setNombre(txtnombre.getText());
+        dts.setApaterno(txtapaterno.getText());
+        dts.setAmaterno(txtamaterno.getText());
         int seleccionado = cbotipo_documento.getSelectedIndex();
-        dts.SetTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
-        dts.SetNum_documento(txtnum_documento.getText());
-        dts.SetDireccion(txtdireccion.getText());
-        dts.SetTelefono(txttelefono.getText());
-        dts.SetEmail(txtemail.getText());
-        
-        dts.SetSueldo(Double.parseDouble(txtsueldo.getText()));
+        dts.setTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
+        dts.setNum_documento(txtnum_documento.getText());
+        dts.setDireccion(txtdireccion.getText());
+        dts.setTelefono(txttelefono.getText());
+        dts.setEmail(txtemail.getText());
+        dts.setSueldo(Double.parseDouble(txtsueldo.getText()));
         seleccionado=cboacceso.getSelectedIndex();
-        dts.SetAcceso((String)cboacceso.getItemAt(seleccionado));
-        dts.SetLogin(txtlogin.getText());
-        dts.SetPassword(txtpassword.getText());
+        dts.setAcceso((String)cboacceso.getItemAt(seleccionado));
+        dts.setLogin(txtlogin.getText());
+        dts.setPassword(txtpassword.getText());
         
         seleccionado=cboestado.getSelectedIndex();
-        dts.SetEstado((String)cboestado.getItemAt(seleccionado));
+        dts.setEstado((String)cboestado.getItemAt(seleccionado));
         
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
@@ -657,7 +654,7 @@ public class Frmtrabajador extends javax.swing.JInternalFrame {
 
         }
         else if (accion.equals("editar")){
-            dts.SetIdpersona(Integer.parseInt(txtidpersona.getText()));
+            dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El Trabajador fue Editado satisfactoriamente");
@@ -713,7 +710,7 @@ public class Frmtrabajador extends javax.swing.JInternalFrame {
                 Ftrabajador func = new Ftrabajador();
                 Vtrabajador dts= new Vtrabajador();
 
-                dts.SetIdpersona(Integer.parseInt(txtidpersona.getText()));
+                dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();

@@ -28,7 +28,7 @@ public class Vconsumo {
         return idconsumo;
     }
 
-    public void SetIdconsumo(int idconsumo) {
+    public void setIdconsumo(int idconsumo) {
         this.idconsumo = idconsumo;
     }
 
@@ -36,7 +36,7 @@ public class Vconsumo {
         return idreserva;
     }
 
-    public void SetIdreserva(int idreserva) {
+    public void setIdreserva(int idreserva) {
         this.idreserva = idreserva;
     }
 
@@ -44,7 +44,7 @@ public class Vconsumo {
         return idproducto;
     }
 
-    public void SetIdproducto(int idproducto) {
+    public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
 
@@ -52,7 +52,7 @@ public class Vconsumo {
         return cantidad;
     }
 
-    public void SetCantidad(Double cantidad) {
+    public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
 
@@ -60,15 +60,15 @@ public class Vconsumo {
         return precio_venta;
     }
 
-    public void SetPrecio_venta(Double precio_venta) {
+    public void setPrecio_venta(Double precio_venta) {
         this.precio_venta = precio_venta;
     }
 
-    public String GetEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void SetEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
     

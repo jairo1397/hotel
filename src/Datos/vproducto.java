@@ -24,43 +24,43 @@ public class Vproducto {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public int GetIdproducto() {
+    public int getIdproducto() {
         return idproducto;
     }
 
-    public void SetIdproducto(int idproducto) {
+    public void setIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
 
-    public String GetNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void SetNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String GetDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void SetDescripcion(String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String GetUnidad_medida() {
+    public String getUnidad_medida() {
         return unidad_medida;
     }
 
-    public void SetUnidad_medida(String unidad_medida) {
+    public void setUnidad_medida(String unidad_medida) {
         this.unidad_medida = unidad_medida;
     }
 
-    public Double GetPrecio_venta() {
+    public Double getPrecio_venta() {
         return precio_venta;
     }
 
-    public void SetPrecio_venta(Double precio_venta) {
+    public void setPrecio_venta(Double precio_venta) {
         this.precio_venta = precio_venta;
     }
     

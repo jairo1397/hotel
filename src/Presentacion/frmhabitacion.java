@@ -466,21 +466,21 @@ public class Frmhabitacion extends javax.swing.JInternalFrame {
         Vhabitacion dts = new Vhabitacion();
         Fhabitacion func = new Fhabitacion();
 
-        dts.SetNumero(txtnumero.getText());
+        dts.setNumero(txtnumero.getText());
 
         int seleccionado = cbopiso.getSelectedIndex();
-        dts.SetPiso((String) cbopiso.getItemAt(seleccionado));
+        dts.setPiso((String) cbopiso.getItemAt(seleccionado));
 
-        dts.SetDescripcion(txtdescripcion.getText());
-        dts.SetCaracteristicas(txtcaracteristicas.getText());
+        dts.setDescripcion(txtdescripcion.getText());
+        dts.setCaracteristicas(txtcaracteristicas.getText());
         
-        dts.SetPrecio_diario(Double.parseDouble(txtprecio_diario.getText()));
+        dts.setPrecio_diario(Double.parseDouble(txtprecio_diario.getText()));
         
         seleccionado = cboestado.getSelectedIndex();
-        dts.SetEstado((String) cboestado.getItemAt(seleccionado));
+        dts.setEstado((String) cboestado.getItemAt(seleccionado));
         
         seleccionado = cbotipo_habitacion.getSelectedIndex();
-        dts.SetTipo_habitacion((String) cbotipo_habitacion.getItemAt(seleccionado));
+        dts.setTipo_habitacion((String) cbotipo_habitacion.getItemAt(seleccionado));
         
         
         if (accion.equals("guardar")) {
@@ -496,7 +496,7 @@ public class Frmhabitacion extends javax.swing.JInternalFrame {
             
         }
         else if (accion.equals("editar")){
-            dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+            dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
             
             
             if (func.editar(dts)) {
@@ -521,7 +521,7 @@ public class Frmhabitacion extends javax.swing.JInternalFrame {
                 Fhabitacion func = new Fhabitacion ();
                 Vhabitacion dts= new Vhabitacion();
                 
-                dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();

@@ -603,15 +603,12 @@ public class FrmPago extends javax.swing.JInternalFrame {
         Vpago dts = new Vpago();
         Fpago func = new Fpago();
 
-        dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
-
-
+        dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
         int seleccionado = cbotipo_comprobante.getSelectedIndex();
-        dts.SetTipo_comprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
-        
-        dts.SetNum_comprobante(txtnum_comprobante.getText());
-        dts.SetIgv(Double.parseDouble(txtigv.getText()));
-        dts.SetTotal_pago(Double.parseDouble(txttotal_pago.getText()));
+        dts.setTipo_comprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
+        dts.setNum_comprobante(txtnum_comprobante.getText());
+        dts.setIgv(Double.parseDouble(txtigv.getText()));
+        dts.setTotal_pago(Double.parseDouble(txttotal_pago.getText()));
         
         Calendar cal;
         int d;
@@ -623,7 +620,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
         
-        dts.SetFecha_pago( new Date (a,m,d));
+        dts.setFecha_pago( new Date (a,m,d));
         
         
         cal=dcfecha_emision.getCalendar();
@@ -631,7 +628,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
         
-        dts.SetFecha_emision(new Date (a,m,d));
+        dts.setFecha_emision(new Date (a,m,d));
         
         
         
@@ -647,7 +644,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
                 Fhabitacion func2 = new Fhabitacion();
                 Vhabitacion dts2 = new Vhabitacion();
                 
-                dts2.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts2.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func2.desocupar(dts2);
                 
                 //Cancelar o pagar la reserva
@@ -655,14 +652,14 @@ public class FrmPago extends javax.swing.JInternalFrame {
                 Freserva func3 = new Freserva();
                 Vreserva dts3 = new Vreserva();
                 
-                dts3.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
+                dts3.setIdreserva(Integer.parseInt(txtidreserva.getText()));
                 func3.pagar(dts3);
                 
             }
 
         }
         else if (accion.equals("editar")){
-            dts.SetIdpago(Integer.parseInt(txtidpago.getText()));
+            dts.setIdpago(Integer.parseInt(txtidpago.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El pago del Sr. " + 
@@ -710,7 +707,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
                 Fpago func = new Fpago ();
                 Vpago dts= new Vpago();
 
-                dts.SetIdpago(Integer.parseInt(txtidpago.getText()));
+                dts.setIdpago(Integer.parseInt(txtidpago.getText()));
                 func.eliminar(dts);
                 mostrar(idreserva);
                 inhabilitar();

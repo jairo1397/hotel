@@ -68,16 +68,16 @@ public class Fcliente {
             PreparedStatement pst = cn.prepareStatement(sSQL);
             PreparedStatement pst2 = cn.prepareStatement(sSQL2);
 
-            pst.setString(1, dts.GetNombre());
-            pst.setString(2, dts.GetApaterno());
-            pst.setString(3, dts.GetAmaterno());
-            pst.setString(4, dts.GetTipo_documento());
-            pst.setString(5, dts.GetNum_documento());
-            pst.setString(6, dts.GetDireccion());
-            pst.setString(7, dts.GetTelefono());
-            pst.setString(8, dts.GetEmail());
+            pst.setString(1, dts.getNombre());
+            pst.setString(2, dts.getApaterno());
+            pst.setString(3, dts.getAmaterno());
+            pst.setString(4, dts.getTipo_documento());
+            pst.setString(5, dts.getNum_documento());
+            pst.setString(6, dts.getDireccion());
+            pst.setString(7, dts.getTelefono());
+            pst.setString(8, dts.getEmail());
 
-            pst2.setString(1, dts.GetCodigo_cliente());
+            pst2.setString(1, dts.getCodigo_cliente());
 
             int n = pst.executeUpdate();
 
@@ -112,18 +112,18 @@ public class Fcliente {
             PreparedStatement pst = cn.prepareStatement(sSQL);
             PreparedStatement pst2 = cn.prepareStatement(sSQL2);
 
-            pst.setString(1, dts.GetNombre());
-            pst.setString(2, dts.GetApaterno());
-            pst.setString(3, dts.GetAmaterno());
-            pst.setString(4, dts.GetTipo_documento());
-            pst.setString(5, dts.GetNum_documento());
-            pst.setString(6, dts.GetDireccion());
-            pst.setString(7, dts.GetTelefono());
-            pst.setString(8, dts.GetEmail());
-            pst.setInt(9, dts.GetIdpersona());
+            pst.setString(1, dts.getNombre());
+            pst.setString(2, dts.getApaterno());
+            pst.setString(3, dts.getAmaterno());
+            pst.setString(4, dts.getTipo_documento());
+            pst.setString(5, dts.getNum_documento());
+            pst.setString(6, dts.getDireccion());
+            pst.setString(7, dts.getTelefono());
+            pst.setString(8, dts.getEmail());
+            pst.setInt(9, dts.getIdpersona());
 
-            pst2.setString(1, dts.GetCodigo_cliente());
-            pst2.setInt(2, dts.GetIdpersona());
+            pst2.setString(1, dts.getCodigo_cliente());
+            pst2.setInt(2, dts.getIdpersona());
 
             int n = pst.executeUpdate();
 
@@ -157,10 +157,10 @@ public class Fcliente {
             PreparedStatement pst2 = cn.prepareStatement(sSQL2);
 
             
-            pst.setInt(1, dts.GetIdpersona());
+            pst.setInt(1, dts.getIdpersona());
 
             
-            pst2.setInt(1, dts.GetIdpersona());
+            pst2.setInt(1, dts.getIdpersona());
 
             int n = pst.executeUpdate();
 

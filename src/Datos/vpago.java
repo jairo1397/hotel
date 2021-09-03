@@ -31,67 +31,67 @@ public class Vpago {
 
 
 
-    public int GetIdpago() {
+    public int getIdpago() {
         return idpago;
     }
 
-    public void SetIdpago(int idpago) {
+    public void setIdpago(int idpago) {
         this.idpago = idpago;
     }
 
-    public int GetIdreserva() {
+    public int getIdreserva() {
         return idreserva;
     }
 
-    public void SetIdreserva(int idreserva) {
+    public void setIdreserva(int idreserva) {
         this.idreserva = idreserva;
     }
 
-    public String GetTipo_comprobante() {
+    public String getTipo_comprobante() {
         return tipo_comprobante;
     }
 
-    public void SetTipo_comprobante(String tipo_comprobante) {
+    public void setTipo_comprobante(String tipo_comprobante) {
         this.tipo_comprobante = tipo_comprobante;
     }
 
-    public String GetNum_comprobante() {
+    public String getNum_comprobante() {
         return num_comprobante;
     }
 
-    public void SetNum_comprobante(String num_comprobante) {
+    public void setNum_comprobante(String num_comprobante) {
         this.num_comprobante = num_comprobante;
     }
 
-    public Double GetIgv() {
+    public Double getIgv() {
         return igv;
     }
 
-    public void SetIgv(Double igv) {
+    public void setIgv(Double igv) {
         this.igv = igv;
     }
 
-    public Double GetTotal_pago() {
+    public Double getTotal_pago() {
         return total_pago;
     }
 
-    public void SetTotal_pago(Double total_pago) {
+    public void setTotal_pago(Double total_pago) {
         this.total_pago = total_pago;
     }
 
-    public Date GetFecha_emision() {
+    public Date getFecha_emision() {
         return fecha_emision;
     }
 
-    public void SetFecha_emision(Date fecha_emision) {
+    public void setFecha_emision(Date fecha_emision) {
         this.fecha_emision = fecha_emision;
     }
 
-    public Date GetFecha_pago() {
+    public Date getFecha_pago() {
         return fecha_pago;
     }
 
-    public void SetFecha_pago(Date fecha_pago) {
+    public void setFecha_pago(Date fecha_pago) {
         this.fecha_pago = fecha_pago;
     }
     

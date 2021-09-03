@@ -419,7 +419,7 @@ public class Frmproducto extends javax.swing.JInternalFrame {
                 Fproducto func = new Fproducto ();
                 Vproducto dts= new Vproducto();
 
-                dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
+                dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -481,18 +481,11 @@ public class Frmproducto extends javax.swing.JInternalFrame {
         Vproducto dts = new Vproducto();
         Fproducto func = new Fproducto();
 
-        dts.SetNombre(txtnombre.getText());
-
-        
-
-        dts.SetDescripcion(txtdescripcion.getText());
-        
-       
-
-        dts.SetPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
-
+        dts.setNombre(txtnombre.getText());
+        dts.setDescripcion(txtdescripcion.getText());
+        dts.setPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
         int seleccionado = cbounidad_medida.getSelectedIndex();
-        dts.SetUnidad_medida((String) cbounidad_medida.getItemAt(seleccionado));
+        dts.setUnidad_medida((String) cbounidad_medida.getItemAt(seleccionado));
 
         
         if (accion.equals("guardar")) {
@@ -505,7 +498,7 @@ public class Frmproducto extends javax.swing.JInternalFrame {
 
         }
         else if (accion.equals("editar")){
-            dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
+            dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El producto fue Editado satisfactoriamente");

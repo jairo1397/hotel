@@ -112,13 +112,13 @@ public class Fhabitacion {
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.GetNumero());
-           pst.setString(2, dts.GetPiso());
-           pst.setString(3, dts.GetDescripcion());
-           pst.setString(4, dts.GetCaracteristicas());
-           pst.setDouble(5, dts.GetPrecio_diario());
-           pst.setString(6, dts.GetEstado());
-           pst.setString(7, dts.GetTipo_habitacion());
+           pst.setString(1, dts.getNumero());
+           pst.setString(2, dts.getPiso());
+           pst.setString(3, dts.getDescripcion());
+           pst.setString(4, dts.getCaracteristicas());
+           pst.setDouble(5, dts.getPrecio_diario());
+           pst.setString(6, dts.getEstado());
+           pst.setString(7, dts.getTipo_habitacion());
            
            int n=pst.executeUpdate();
            
@@ -144,14 +144,14 @@ public class Fhabitacion {
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.GetNumero());
-           pst.setString(2, dts.GetPiso());
-           pst.setString(3, dts.GetDescripcion());
-           pst.setString(4, dts.GetCaracteristicas());
-           pst.setDouble(5, dts.GetPrecio_diario());
-           pst.setString(6, dts.GetEstado());
-           pst.setString(7, dts.GetTipo_habitacion());
-           pst.setInt(8, dts.GetIdhabitacion());
+           pst.setString(1, dts.getNumero());
+           pst.setString(2, dts.getPiso());
+           pst.setString(3, dts.getDescripcion());
+           pst.setString(4, dts.getCaracteristicas());
+           pst.setDouble(5, dts.getPrecio_diario());
+           pst.setString(6, dts.getEstado());
+           pst.setString(7, dts.getTipo_habitacion());
+           pst.setInt(8, dts.getIdhabitacion());
            
            int n=pst.executeUpdate();
            
@@ -176,7 +176,7 @@ public class Fhabitacion {
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
           
-           pst.setInt(1, dts.GetIdhabitacion());
+           pst.setInt(1, dts.getIdhabitacion());
            
            int n=pst.executeUpdate();
            
@@ -202,7 +202,7 @@ public class Fhabitacion {
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
           
-           pst.setInt(1, dts.GetIdhabitacion());
+           pst.setInt(1, dts.getIdhabitacion());
            
            int n=pst.executeUpdate();
            
@@ -229,7 +229,7 @@ public class Fhabitacion {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.GetIdhabitacion());
+           pst.setInt(1, dts.getIdhabitacion());
            
            int n=pst.executeUpdate();
            

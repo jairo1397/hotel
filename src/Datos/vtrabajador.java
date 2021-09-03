@@ -23,43 +23,43 @@ public class Vtrabajador extends Vpersona{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public Double GetSueldo() {
+    public Double getSueldo() {
         return sueldo;
     }
 
-    public void SetSueldo(Double sueldo) {
+    public void setSueldo(Double sueldo) {
         this.sueldo = sueldo;
     }
 
-    public String GetAcceso() {
+    public String getAcceso() {
         return acceso;
     }
 
-    public void SetAcceso(String acceso) {
+    public void setAcceso(String acceso) {
         this.acceso = acceso;
     }
 
-    public String GetLogin() {
+    public String getLogin() {
         return login;
     }
 
-    public void SetLogin(String login) {
+    public void setLogin(String login) {
         this.login = login;
     }
 
-    public String GetPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void SetPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String GetEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void SetEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
      

@@ -61,13 +61,13 @@ public class Fpago {
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.GetIdreserva());
-           pst.setString(2, dts.GetTipo_comprobante());
-           pst.setString(3, dts.GetNum_comprobante());
-           pst.setDouble(4, dts.GetIgv());
-           pst.setDouble(5, dts.GetTotal_pago());
-           pst.setDate(6, dts.GetFecha_emision());
-           pst.setDate(7, dts.GetFecha_pago());
+           pst.setInt(1, dts.getIdreserva());
+           pst.setString(2, dts.getTipo_comprobante());
+           pst.setString(3, dts.getNum_comprobante());
+           pst.setDouble(4, dts.getIgv());
+           pst.setDouble(5, dts.getTotal_pago());
+           pst.setDate(6, dts.getFecha_emision());
+           pst.setDate(7, dts.getFecha_pago());
            
            
            int n=pst.executeUpdate();
@@ -94,15 +94,15 @@ public class Fpago {
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.GetIdreserva());
-           pst.setString(2, dts.GetTipo_comprobante());
-           pst.setString(3, dts.GetNum_comprobante());
-           pst.setDouble(4, dts.GetIgv());
-           pst.setDouble(5, dts.GetTotal_pago());
-           pst.setDate(6, dts.GetFecha_emision());
-           pst.setDate(7, dts.GetFecha_pago());
+           pst.setInt(1, dts.getIdreserva());
+           pst.setString(2, dts.getTipo_comprobante());
+           pst.setString(3, dts.getNum_comprobante());
+           pst.setDouble(4, dts.getIgv());
+           pst.setDouble(5, dts.getTotal_pago());
+           pst.setDate(6, dts.getFecha_emision());
+           pst.setDate(7, dts.getFecha_pago());
            
-           pst.setInt(8, dts.GetIdpago());
+           pst.setInt(8, dts.getIdpago());
            
            int n=pst.executeUpdate();
            
@@ -126,7 +126,7 @@ public class Fpago {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.GetIdpago());
+           pst.setInt(1, dts.getIdpago());
            
            int n=pst.executeUpdate();
            

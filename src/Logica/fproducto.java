@@ -59,10 +59,10 @@ public class Fproducto {
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.GetNombre());
-           pst.setString(2, dts.GetDescripcion());
-           pst.setString(3, dts.GetUnidad_medida());
-           pst.setDouble(4, dts.GetPrecio_venta());
+           pst.setString(1, dts.getNombre());
+           pst.setString(2, dts.getDescripcion());
+           pst.setString(3, dts.getUnidad_medida());
+           pst.setDouble(4, dts.getPrecio_venta());
            
            
            int n=pst.executeUpdate();
@@ -89,12 +89,12 @@ public class Fproducto {
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.GetNombre());
-           pst.setString(2, dts.GetDescripcion());
-           pst.setString(3, dts.GetUnidad_medida());
-           pst.setDouble(4, dts.GetPrecio_venta());
+           pst.setString(1, dts.getNombre());
+           pst.setString(2, dts.getDescripcion());
+           pst.setString(3, dts.getUnidad_medida());
+           pst.setDouble(4, dts.getPrecio_venta());
            
-           pst.setInt(5, dts.GetIdproducto());
+           pst.setInt(5, dts.getIdproducto());
            
            int n=pst.executeUpdate();
            
@@ -118,7 +118,7 @@ public class Fproducto {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.GetIdproducto());
+           pst.setInt(1, dts.getIdproducto());
            
            int n=pst.executeUpdate();
            

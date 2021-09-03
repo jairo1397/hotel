@@ -72,7 +72,7 @@ public class Fconsumo {
            pst.setInt(2, dts.GetIdproducto());
            pst.setDouble(3, dts.GetCantidad());
            pst.setDouble(4, dts.GetPrecio_venta());
-           pst.setString(5, dts.GetEstado());
+           pst.setString(5, dts.getEstado());
            
            
            int n=pst.executeUpdate();
@@ -103,7 +103,7 @@ public class Fconsumo {
            pst.setInt(2, dts.GetIdproducto());
            pst.setDouble(3, dts.GetCantidad());
            pst.setDouble(4, dts.GetPrecio_venta());
-           pst.setString(5, dts.GetEstado());
+           pst.setString(5, dts.getEstado());
            
            pst.setInt(6, dts.GetIdconsumo());
            

@@ -473,13 +473,13 @@ private String accion = "guardar";
         Vconsumo dts = new Vconsumo();
         Fconsumo func = new Fconsumo();
 
-        dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
-        dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
-        dts.SetCantidad(Double.parseDouble(txtcantidad.getText()));
-        dts.SetPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
+        dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
+        dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
+        dts.setCantidad(Double.parseDouble(txtcantidad.getText()));
+        dts.setPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
         
         int seleccionado = cboesado.getSelectedIndex();
-        dts.SetEstado((String) cboesado.getItemAt(seleccionado));
+        dts.setEstado((String) cboesado.getItemAt(seleccionado));
 
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
@@ -492,7 +492,7 @@ private String accion = "guardar";
 
         }
         else if (accion.equals("editar")){
-            dts.SetIdconsumo(Integer.parseInt(txtidconsumo.getText()));
+            dts.setIdconsumo(Integer.parseInt(txtidconsumo.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El consumo del cliente "
@@ -538,7 +538,7 @@ private String accion = "guardar";
                 Fconsumo func = new Fconsumo ();
                 Vconsumo dts= new Vconsumo();
 
-                dts.SetIdconsumo(Integer.parseInt(txtidconsumo.getText()));
+                dts.setIdconsumo(Integer.parseInt(txtidconsumo.getText()));
                 func.eliminar(dts);
                 mostrar(idreserva);
                 inhabilitar();

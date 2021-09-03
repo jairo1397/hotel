@@ -539,18 +539,16 @@ public class Frmcliente extends javax.swing.JInternalFrame {
         Vcliente dts = new Vcliente();
         Fcliente func = new Fcliente();
 
-        dts.SetNombre(txtnombre.getText());
-
-        dts.SetApaterno(txtapaterno.getText());
-        dts.SetAmaterno(txtamaterno.getText());
-        
+        dts.setNombre(txtnombre.getText());
+        dts.setApaterno(txtapaterno.getText());
+        dts.setAmaterno(txtamaterno.getText());
         int seleccionado = cbotipo_documento.getSelectedIndex();
-        dts.SetTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
-        dts.SetNum_documento(txtnum_documento.getText());
-        dts.SetDireccion(txtdireccion.getText());
-        dts.SetTelefono(txttelefono.getText());
-        dts.SetEmail(txtemail.getText());
-        dts.SetCodigo_cliente(txtcodigo_cliente.getText());
+        dts.setTipo_documento((String) cbotipo_documento.getItemAt(seleccionado));
+        dts.setNum_documento(txtnum_documento.getText());
+        dts.setDireccion(txtdireccion.getText());
+        dts.setTelefono(txttelefono.getText());
+        dts.setEmail(txtemail.getText());
+        dts.setCodigo_cliente(txtcodigo_cliente.getText());
         
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
@@ -562,7 +560,7 @@ public class Frmcliente extends javax.swing.JInternalFrame {
 
         }
         else if (accion.equals("editar")){
-            dts.SetIdpersona(Integer.parseInt(txtidpersona.getText()));
+            dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El Cliente fue Editado satisfactoriamente");
@@ -614,7 +612,7 @@ public class Frmcliente extends javax.swing.JInternalFrame {
                 Fcliente func = new Fcliente();
                 Vcliente dts= new Vcliente();
 
-                dts.SetIdpersona(Integer.parseInt(txtidpersona.getText()));
+                dts.setIdpersona(Integer.parseInt(txtidpersona.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
