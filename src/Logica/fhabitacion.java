@@ -122,11 +122,7 @@ public class Fhabitacion {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+return  n!=0;
 
            
            
@@ -155,11 +151,7 @@ public class Fhabitacion {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+return  n!=0;
 
            
        } catch (Exception e) {
@@ -180,11 +172,7 @@ public class Fhabitacion {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+return  n!=0;
 
            
        } catch (Exception e) {
@@ -206,11 +194,10 @@ public class Fhabitacion {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
+           return  n!=0;
+ 
 
-               return false;
+
 
            
        } catch (Exception e) {
@@ -233,11 +220,7 @@ public class Fhabitacion {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+return  n!=0;
 
            
        } catch (Exception e) {

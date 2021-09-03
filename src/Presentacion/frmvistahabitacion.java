@@ -19,7 +19,7 @@ public class Frmvistahabitacion extends javax.swing.JFrame {
        
     }
     
-     void ocultar_columnas() {
+     void ocultarColumnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -32,7 +32,7 @@ public class Frmvistahabitacion extends javax.swing.JFrame {
             modelo = func.mostrarvista(buscar);
 
             tablalistado.setModel(modelo);
-            ocultar_columnas();
+            ocultarColumnas();
             lbltotalregistros.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {

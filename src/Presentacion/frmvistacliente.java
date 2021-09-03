@@ -17,7 +17,7 @@ public class Frmvistacliente extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    void Ocultar_columnas() {
+    void ocultarColumnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -30,7 +30,7 @@ public class Frmvistacliente extends javax.swing.JFrame {
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
-            Ocultar_columnas();
+            ocultarColumnas();
             lbltotalregistros.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {

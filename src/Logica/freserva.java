@@ -121,11 +121,7 @@ public class Freserva {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+       return n!=0;
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -146,11 +142,7 @@ public class Freserva {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+       return n!=0;
            
            
        } catch (Exception e) {
@@ -175,11 +167,7 @@ public class Freserva {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-         
-               return false;
+       return n!=0;
            
            
        } catch (Exception e) {

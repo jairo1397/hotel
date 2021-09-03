@@ -84,11 +84,7 @@ public class Fcliente {
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
 
-                if (n2 != 0) {
-                    return true;
-
-                }
-                    return false;
+return n2 != 0;
                 
 
             } 
@@ -130,11 +126,7 @@ public class Fcliente {
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
 
-                if (n2 != 0) {
-                    return true;
-
-                } 
-                    return false;
+                return n2 != 0; 
                 
 
             } 
@@ -167,11 +159,7 @@ public class Fcliente {
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
 
-                if (n2 != 0) {
-                    return true;
-
-                } 
-                    return false;
+return n2 != 0;
                 
 
             } 

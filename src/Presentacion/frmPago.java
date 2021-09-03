@@ -44,7 +44,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
     
 
 
-    void ocultar_columnas() {
+    void ocultarColumnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -54,7 +54,7 @@ public class FrmPago extends javax.swing.JInternalFrame {
         tablalistado.getColumnModel().getColumn(1).setPreferredWidth(0);
     }
 
-    void ocultar_columnasconsumo() {
+    void ocultarColumnasconsumo() {
         tablalistadoconsumo.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistadoconsumo.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistadoconsumo.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -129,14 +129,14 @@ public class FrmPago extends javax.swing.JInternalFrame {
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
-            ocultar_columnas();
+            ocultarColumnas();
             lbltotalregistros.setText("Total Pagos " + Integer.toString(func.totalregistros));
             
             //Mostrar los datos de los consumos
             Fconsumo func2 = new Fconsumo();
             modelo= func2.mostrar(buscar);
             tablalistadoconsumo.setModel(modelo);
-            ocultar_columnasconsumo();
+            ocultarColumnasconsumo();
             
             lbltotalregistrosconsumo.setText("Total Consumos " + func2.totalregistros);
             lbltotalconsumo.setText("Consumo Total: $." + func2.totalconsumo );

@@ -98,11 +98,7 @@ public class Fproducto {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-
-               return false;
+       return n!=0;
    
            
        } catch (Exception e) {
@@ -122,11 +118,7 @@ public class Fproducto {
            
            int n=pst.executeUpdate();
            
-           if (n!=0){
-               return true;
-           }
-    
-               return false;
+       return n!=0;
        
            
        } catch (Exception e) {

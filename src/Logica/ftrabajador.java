@@ -92,10 +92,7 @@ public class Ftrabajador {
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
 
-                if (n2 != 0) {
-                    return true;
-                } 
-                return false;
+       return n2!=0;
             }
                return false;
         } catch (Exception e) {
@@ -137,11 +134,7 @@ public class Ftrabajador {
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
 
-                if (n2 != 0) {
-                    return true;
-
-                }
-                    return false;
+       return n2!=0;
                 
 
             } 
@@ -173,12 +166,7 @@ public class Ftrabajador {
 
             if (n != 0) {
                 int n2 = pst2.executeUpdate();
-
-                if (n2 != 0) {
-                    return true;
-
-                } 
-                    return false;
+       return n2!=0;
                 
 
             } 
