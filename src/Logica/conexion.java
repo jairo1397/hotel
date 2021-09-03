@@ -1,20 +1,13 @@
-
-
 package Logica;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
 public class conexion {
-    public String db="hotelbd";
-    public String url="jdbc:mysql://localhost:3306/hotelbd?useSSL=false"; //+db;
+    public String db="hoteltw";
+    public String url="jdbc:mysql://localhost:3306/hoteltw?useSSL=false"; //+db;
     public String user="root";
-    public String pass="root";
-
-    public conexion() {
-    }
+    public String pass="";
     
     public Connection conectar(){
         Connection link=null;

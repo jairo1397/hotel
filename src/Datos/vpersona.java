@@ -1,7 +1,7 @@
 
 package Datos;
 
-public class vpersona {
+public class Vpersona {
     private int idpersona;
     private String nombre;
     private String apaterno;
@@ -12,10 +12,11 @@ public class vpersona {
     private String telefono;
     private String email;
 
-    public vpersona() {
+    public Vpersona() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public vpersona(int idpersona, String nombre, String apaterno, String amaterno, String tipo_documento, String num_documento, String direccion, String telefono, String email) {
+    public Vpersona(int idpersona, String nombre, String apaterno, String amaterno, String tipo_documento, String num_documento, String direccion, String telefono, String email) {
         this.idpersona = idpersona;
         this.nombre = nombre;
         this.apaterno = apaterno;
@@ -27,75 +28,75 @@ public class vpersona {
         this.email = email;
     }
 
-    public int getIdpersona() {
+    public int GetIdpersona() {
         return idpersona;
     }
 
-    public void setIdpersona(int idpersona) {
+    public void SetIdpersona(int idpersona) {
         this.idpersona = idpersona;
     }
 
-    public String getNombre() {
+    public String GetNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void SetNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getApaterno() {
+    public String GetApaterno() {
         return apaterno;
     }
 
-    public void setApaterno(String apaterno) {
+    public void SetApaterno(String apaterno) {
         this.apaterno = apaterno;
     }
 
-    public String getAmaterno() {
+    public String GetAmaterno() {
         return amaterno;
     }
 
-    public void setAmaterno(String amaterno) {
+    public void SetAmaterno(String amaterno) {
         this.amaterno = amaterno;
     }
 
-    public String getTipo_documento() {
+    public String GetTipo_documento() {
         return tipo_documento;
     }
 
-    public void setTipo_documento(String tipo_documento) {
+    public void SetTipo_documento(String tipo_documento) {
         this.tipo_documento = tipo_documento;
     }
 
-    public String getNum_documento() {
+    public String GetNum_documento() {
         return num_documento;
     }
 
-    public void setNum_documento(String num_documento) {
+    public void SetNum_documento(String num_documento) {
         this.num_documento = num_documento;
     }
 
-    public String getDireccion() {
+    public String GetDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void SetDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    public String getTelefono() {
+    public String GetTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void SetTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public String getEmail() {
+    public String GetEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void SetEmail(String email) {
         this.email = email;
     }
     

@@ -2,21 +2,21 @@
 
 package Datos;
 
-public class vcliente extends vpersona{
+public class Vcliente extends Vpersona{
     private String codigo_cliente;
 
-    public vcliente() {
+    public Vcliente() {
     }
 
-    public vcliente(String codigo_cliente) {
+    public Vcliente(String codigo_cliente) {
         this.codigo_cliente = codigo_cliente;
     }
 
-    public String getCodigo_cliente() {
+    public String GetCodigo_cliente() {
         return codigo_cliente;
     }
 
-    public void setCodigo_cliente(String codigo_cliente) {
+    public void SetCodigo_cliente(String codigo_cliente) {
         this.codigo_cliente = codigo_cliente;
     }
   

@@ -1,7 +1,7 @@
 
 package Datos;
 
-public class vconsumo {
+public class Vconsumo {
     private int idconsumo;
     private int idreserva;
     private int idproducto;
@@ -9,10 +9,9 @@ public class vconsumo {
     private Double precio_venta;
     private String estado;
 
-    public vconsumo() {
-    }
 
-    public vconsumo(int idconsumo, int idreserva, int idproducto, Double cantidad, Double precio_venta, String estado) {
+
+    public Vconsumo(int idconsumo, int idreserva, int idproducto, Double cantidad, Double precio_venta, String estado) {
         this.idconsumo = idconsumo;
         this.idreserva = idreserva;
         this.idproducto = idproducto;
@@ -21,51 +20,55 @@ public class vconsumo {
         this.estado = estado;
     }
 
-    public int getIdconsumo() {
+    public Vconsumo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int GetIdconsumo() {
         return idconsumo;
     }
 
-    public void setIdconsumo(int idconsumo) {
+    public void SetIdconsumo(int idconsumo) {
         this.idconsumo = idconsumo;
     }
 
-    public int getIdreserva() {
+    public int GetIdreserva() {
         return idreserva;
     }
 
-    public void setIdreserva(int idreserva) {
+    public void SetIdreserva(int idreserva) {
         this.idreserva = idreserva;
     }
 
-    public int getIdproducto() {
+    public int GetIdproducto() {
         return idproducto;
     }
 
-    public void setIdproducto(int idproducto) {
+    public void SetIdproducto(int idproducto) {
         this.idproducto = idproducto;
     }
 
-    public Double getCantidad() {
+    public Double GetCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Double cantidad) {
+    public void SetCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
 
-    public Double getPrecio_venta() {
+    public Double GetPrecio_venta() {
         return precio_venta;
     }
 
-    public void setPrecio_venta(Double precio_venta) {
+    public void SetPrecio_venta(Double precio_venta) {
         this.precio_venta = precio_venta;
     }
 
-    public String getEstado() {
+    public String GetEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void SetEstado(String estado) {
         this.estado = estado;
     }
     

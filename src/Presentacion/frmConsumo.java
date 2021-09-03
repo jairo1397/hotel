@@ -1,19 +1,11 @@
-
-
 package Presentacion;
-
-import Datos.vconsumo;
+import Datos.Vconsumo;
 import Logica.fconsumo;
-import Logica.fproducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-
 public class frmConsumo extends javax.swing.JInternalFrame {
 public static String idreserva;
-public static String cliente;
-    
-        
+public static String cliente;        
     /**
      * Creates new form frmConsumo
      */
@@ -477,16 +469,16 @@ public static String cliente;
             return;
         }
 
-        vconsumo dts = new vconsumo();
+        Vconsumo dts = new Vconsumo();
         fconsumo func = new fconsumo();
 
-        dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
-        dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
-        dts.setCantidad(Double.parseDouble(txtcantidad.getText()));
-        dts.setPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
+        dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
+        dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
+        dts.SetCantidad(Double.parseDouble(txtcantidad.getText()));
+        dts.SetPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
         
         int seleccionado = cboesado.getSelectedIndex();
-        dts.setEstado((String) cboesado.getItemAt(seleccionado));
+        dts.SetEstado((String) cboesado.getItemAt(seleccionado));
 
         if (accion.equals("guardar")) {
             if (func.insertar(dts)) {
@@ -499,7 +491,7 @@ public static String cliente;
 
         }
         else if (accion.equals("editar")){
-            dts.setIdconsumo(Integer.parseInt(txtidconsumo.getText()));
+            dts.SetIdconsumo(Integer.parseInt(txtidconsumo.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El consumo del cliente "
@@ -543,9 +535,9 @@ public static String cliente;
 
             if (confirmacion==0) {
                 fconsumo func = new fconsumo ();
-                vconsumo dts= new vconsumo();
+                Vconsumo dts= new Vconsumo();
 
-                dts.setIdconsumo(Integer.parseInt(txtidconsumo.getText()));
+                dts.SetIdconsumo(Integer.parseInt(txtidconsumo.getText()));
                 func.eliminar(dts);
                 mostrar(idreserva);
                 inhabilitar();

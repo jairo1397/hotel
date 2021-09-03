@@ -1,18 +1,11 @@
-
-
 package Logica;
-
-import Datos.vhabitacion;
-import Datos.vpago;
-import Datos.vproducto;
+import Datos.Vpago;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-
 public class fpago {
     
    private conexion mysql=new conexion();
@@ -62,19 +55,19 @@ public class fpago {
        
    } 
    
-   public boolean insertar (vpago dts){
+   public boolean insertar (Vpago dts){
        sSQL="insert into pago (idreserva,tipo_comprobante,num_comprobante,igv,total_pago,fecha_emision,fecha_pago)" +
                "values (?,?,?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.getIdreserva());
-           pst.setString(2, dts.getTipo_comprobante());
-           pst.setString(3, dts.getNum_comprobante());
-           pst.setDouble(4, dts.getIgv());
-           pst.setDouble(5, dts.getTotal_pago());
-           pst.setDate(6, dts.getFecha_emision());
-           pst.setDate(7, dts.getFecha_pago());
+           pst.setInt(1, dts.GetIdreserva());
+           pst.setString(2, dts.GetTipo_comprobante());
+           pst.setString(3, dts.GetNum_comprobante());
+           pst.setDouble(4, dts.GetIgv());
+           pst.setDouble(5, dts.GetTotal_pago());
+           pst.setDate(6, dts.GetFecha_emision());
+           pst.setDate(7, dts.GetFecha_pago());
            
            
            int n=pst.executeUpdate();
@@ -82,9 +75,9 @@ public class fpago {
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+     
            
            
            
@@ -94,31 +87,31 @@ public class fpago {
        }
    }
    
-   public boolean editar (vpago dts){
+   public boolean editar (Vpago dts){
        sSQL="update pago set idreserva=?,tipo_comprobante=?,num_comprobante=?,igv=?,total_pago=?,fecha_emision=?,fecha_pago=?"+
                " where idpago=?";
            
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.getIdreserva());
-           pst.setString(2, dts.getTipo_comprobante());
-           pst.setString(3, dts.getNum_comprobante());
-           pst.setDouble(4, dts.getIgv());
-           pst.setDouble(5, dts.getTotal_pago());
-           pst.setDate(6, dts.getFecha_emision());
-           pst.setDate(7, dts.getFecha_pago());
+           pst.setInt(1, dts.GetIdreserva());
+           pst.setString(2, dts.GetTipo_comprobante());
+           pst.setString(3, dts.GetNum_comprobante());
+           pst.setDouble(4, dts.GetIgv());
+           pst.setDouble(5, dts.GetTotal_pago());
+           pst.setDate(6, dts.GetFecha_emision());
+           pst.setDate(7, dts.GetFecha_pago());
            
-           pst.setInt(8, dts.getIdpago());
+           pst.setInt(8, dts.GetIdpago());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+   
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -126,23 +119,23 @@ public class fpago {
        }
    }
   
-   public boolean eliminar (vpago dts){
+   public boolean eliminar (Vpago dts){
        sSQL="delete from pago where idpago=?";
        
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.getIdpago());
+           pst.setInt(1, dts.GetIdpago());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+ 
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);

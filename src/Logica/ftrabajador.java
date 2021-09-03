@@ -1,17 +1,11 @@
-
 package Logica;
-
-import Datos.vcliente;
-import Datos.vproducto;
-import Datos.vtrabajador;
+import Datos.Vtrabajador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-
 public class ftrabajador {
 
     private conexion mysql = new conexion();
@@ -68,7 +62,7 @@ public class ftrabajador {
 
     }
 
-    public boolean insertar(vtrabajador dts) {
+    public boolean insertar(Vtrabajador dts) {
         sSQL = "insert into persona (nombre,apaterno,amaterno,tipo_documento,num_documento,direccion,telefono,email)"
                 + "values (?,?,?,?,?,?,?,?)";
         sSQL2 = "insert into trabajador (idpersona,sueldo,acceso,login,password,estado)"
@@ -78,20 +72,20 @@ public class ftrabajador {
             PreparedStatement pst = cn.prepareStatement(sSQL);
             PreparedStatement pst2 = cn.prepareStatement(sSQL2);
 
-            pst.setString(1, dts.getNombre());
-            pst.setString(2, dts.getApaterno());
-            pst.setString(3, dts.getAmaterno());
-            pst.setString(4, dts.getTipo_documento());
-            pst.setString(5, dts.getNum_documento());
-            pst.setString(6, dts.getDireccion());
-            pst.setString(7, dts.getTelefono());
-            pst.setString(8, dts.getEmail());
+            pst.setString(1, dts.GetNombre());
+            pst.setString(2, dts.GetApaterno());
+            pst.setString(3, dts.GetAmaterno());
+            pst.setString(4, dts.GetTipo_documento());
+            pst.setString(5, dts.GetNum_documento());
+            pst.setString(6, dts.GetDireccion());
+            pst.setString(7, dts.GetTelefono());
+            pst.setString(8, dts.GetEmail());
 
-            pst2.setDouble(1, dts.getSueldo());
-            pst2.setString(2, dts.getAcceso());
-            pst2.setString(3, dts.getLogin());
-            pst2.setString(4, dts.getPassword());
-            pst2.setString(5, dts.getEstado());
+            pst2.setDouble(1, dts.GetSueldo());
+            pst2.setString(2, dts.GetAcceso());
+            pst2.setString(3, dts.GetLogin());
+            pst2.setString(4, dts.GetPassword());
+            pst2.setString(5, dts.GetEstado());
             
             int n = pst.executeUpdate();
 
@@ -100,22 +94,17 @@ public class ftrabajador {
 
                 if (n2 != 0) {
                     return true;
-
-                } else {
-                    return false;
-                }
-
-            } else {
+                } 
                 return false;
             }
-
+               return false;
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
             return false;
         }
     }
 
-    public boolean editar(vtrabajador dts) {
+    public boolean editar(Vtrabajador dts) {
         sSQL = "update persona set nombre=?,apaterno=?,amaterno=?,tipo_documento=?,num_documento=?,"
                 + " direccion=?,telefono=?,email=? where idpersona=?";
         
@@ -126,22 +115,22 @@ public class ftrabajador {
             PreparedStatement pst = cn.prepareStatement(sSQL);
             PreparedStatement pst2 = cn.prepareStatement(sSQL2);
 
-            pst.setString(1, dts.getNombre());
-            pst.setString(2, dts.getApaterno());
-            pst.setString(3, dts.getAmaterno());
-            pst.setString(4, dts.getTipo_documento());
-            pst.setString(5, dts.getNum_documento());
-            pst.setString(6, dts.getDireccion());
-            pst.setString(7, dts.getTelefono());
-            pst.setString(8, dts.getEmail());
-            pst.setInt(9, dts.getIdpersona());
+            pst.setString(1, dts.GetNombre());
+            pst.setString(2, dts.GetApaterno());
+            pst.setString(3, dts.GetAmaterno());
+            pst.setString(4, dts.GetTipo_documento());
+            pst.setString(5, dts.GetNum_documento());
+            pst.setString(6, dts.GetDireccion());
+            pst.setString(7, dts.GetTelefono());
+            pst.setString(8, dts.GetEmail());
+            pst.setInt(9, dts.GetIdpersona());
 
-            pst2.setDouble(1, dts.getSueldo());
-            pst2.setString(2, dts.getAcceso());
-            pst2.setString(3, dts.getLogin());
-            pst2.setString(4, dts.getPassword());
-            pst2.setString(5, dts.getEstado());
-            pst2.setInt(6, dts.getIdpersona());
+            pst2.setDouble(1, dts.GetSueldo());
+            pst2.setString(2, dts.GetAcceso());
+            pst2.setString(3, dts.GetLogin());
+            pst2.setString(4, dts.GetPassword());
+            pst2.setString(5, dts.GetEstado());
+            pst2.setInt(6, dts.GetIdpersona());
 
             int n = pst.executeUpdate();
 
@@ -165,7 +154,7 @@ public class ftrabajador {
         }
     }
 
-    public boolean eliminar(vtrabajador dts) {
+    public boolean eliminar(Vtrabajador dts) {
         sSQL = "delete from trabajador where idpersona=?";
         sSQL2 = "delete from persona where idpersona=?";
 
@@ -175,10 +164,10 @@ public class ftrabajador {
             PreparedStatement pst2 = cn.prepareStatement(sSQL2);
 
             
-            pst.setInt(1, dts.getIdpersona());
+            pst.setInt(1, dts.GetIdpersona());
 
             
-            pst2.setInt(1, dts.getIdpersona());
+            pst2.setInt(1, dts.GetIdpersona());
 
             int n = pst.executeUpdate();
 

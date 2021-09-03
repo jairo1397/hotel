@@ -1,12 +1,8 @@
-
 package Presentacion;
-
-import Datos.vproducto;
-import Logica.fhabitacion;
+import Datos.Vproducto;
 import Logica.fproducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 public class frmproducto extends javax.swing.JInternalFrame {
 
     
@@ -421,9 +417,9 @@ public class frmproducto extends javax.swing.JInternalFrame {
 
             if (confirmacion==0) {
                 fproducto func = new fproducto ();
-                vproducto dts= new vproducto();
+                Vproducto dts= new Vproducto();
 
-                dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
+                dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -482,21 +478,21 @@ public class frmproducto extends javax.swing.JInternalFrame {
 
       
 
-        vproducto dts = new vproducto();
+        Vproducto dts = new Vproducto();
         fproducto func = new fproducto();
 
-        dts.setNombre(txtnombre.getText());
+        dts.SetNombre(txtnombre.getText());
 
         
 
-        dts.setDescripcion(txtdescripcion.getText());
+        dts.SetDescripcion(txtdescripcion.getText());
         
        
 
-        dts.setPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
+        dts.SetPrecio_venta(Double.parseDouble(txtprecio_venta.getText()));
 
         int seleccionado = cbounidad_medida.getSelectedIndex();
-        dts.setUnidad_medida((String) cbounidad_medida.getItemAt(seleccionado));
+        dts.SetUnidad_medida((String) cbounidad_medida.getItemAt(seleccionado));
 
         
         if (accion.equals("guardar")) {
@@ -509,7 +505,7 @@ public class frmproducto extends javax.swing.JInternalFrame {
 
         }
         else if (accion.equals("editar")){
-            dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
+            dts.SetIdproducto(Integer.parseInt(txtidproducto.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El producto fue Editado satisfactoriamente");

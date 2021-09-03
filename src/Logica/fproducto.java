@@ -1,16 +1,11 @@
-
 package Logica;
-
-import Datos.vhabitacion;
-import Datos.vproducto;
+import Datos.Vproducto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-
 public class fproducto {
     
    private conexion mysql=new conexion();
@@ -58,16 +53,16 @@ public class fproducto {
        
    } 
    
-   public boolean insertar (vproducto dts){
+   public boolean insertar (Vproducto dts){
        sSQL="insert into producto (nombre,descripcion,unidad_medida,precio_venta)" +
                "values (?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.getNombre());
-           pst.setString(2, dts.getDescripcion());
-           pst.setString(3, dts.getUnidad_medida());
-           pst.setDouble(4, dts.getPrecio_venta());
+           pst.setString(1, dts.GetNombre());
+           pst.setString(2, dts.GetDescripcion());
+           pst.setString(3, dts.GetUnidad_medida());
+           pst.setDouble(4, dts.GetPrecio_venta());
            
            
            int n=pst.executeUpdate();
@@ -75,9 +70,9 @@ public class fproducto {
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
            
            
@@ -87,28 +82,28 @@ public class fproducto {
        }
    }
    
-   public boolean editar (vproducto dts){
+   public boolean editar (Vproducto dts){
        sSQL="update producto set nombre=?,descripcion=?,unidad_medida=?,precio_venta=?"+
                " where idproducto=?";
            
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.getNombre());
-           pst.setString(2, dts.getDescripcion());
-           pst.setString(3, dts.getUnidad_medida());
-           pst.setDouble(4, dts.getPrecio_venta());
+           pst.setString(1, dts.GetNombre());
+           pst.setString(2, dts.GetDescripcion());
+           pst.setString(3, dts.GetUnidad_medida());
+           pst.setDouble(4, dts.GetPrecio_venta());
            
-           pst.setInt(5, dts.getIdproducto());
+           pst.setInt(5, dts.GetIdproducto());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+   
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -116,23 +111,23 @@ public class fproducto {
        }
    }
   
-   public boolean eliminar (vproducto dts){
+   public boolean eliminar (Vproducto dts){
        sSQL="delete from producto where idproducto=?";
        
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.getIdproducto());
+           pst.setInt(1, dts.GetIdproducto());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+    
                return false;
-           }
+       
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);

@@ -3,7 +3,7 @@ package Datos;
 
 import java.sql.Date;
 
-public class vreserva {
+public class Vreserva {
     private int idreserva;
     private int idhabitacion;
     private int idcliente;
@@ -15,10 +15,8 @@ public class vreserva {
     private Double costo_alojamiento;
     private String estado;
 
-    public vreserva() {
-    }
 
-    public vreserva(int idreserva, int idhabitacion, int idcliente, int idtrabajador, String tipo_reserva, Date fecha_reserva, Date fecha_ingresa, Date fecha_salida, Double costo_alojamiento, String estado) {
+    public Vreserva(int idreserva, int idhabitacion, int idcliente, int idtrabajador, String tipo_reserva, Date fecha_reserva, Date fecha_ingresa, Date fecha_salida, Double costo_alojamiento, String estado) {
         this.idreserva = idreserva;
         this.idhabitacion = idhabitacion;
         this.idcliente = idcliente;
@@ -31,83 +29,87 @@ public class vreserva {
         this.estado = estado;
     }
 
-    public int getIdreserva() {
+    public Vreserva() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int GetIdreserva() {
         return idreserva;
     }
 
-    public void setIdreserva(int idreserva) {
+    public void SetIdreserva(int idreserva) {
         this.idreserva = idreserva;
     }
 
-    public int getIdhabitacion() {
+    public int GetIdhabitacion() {
         return idhabitacion;
     }
 
-    public void setIdhabitacion(int idhabitacion) {
+    public void SetIdhabitacion(int idhabitacion) {
         this.idhabitacion = idhabitacion;
     }
 
-    public int getIdcliente() {
+    public int GetIdcliente() {
         return idcliente;
     }
 
-    public void setIdcliente(int idcliente) {
+    public void SetIdcliente(int idcliente) {
         this.idcliente = idcliente;
     }
 
-    public int getIdtrabajador() {
+    public int GetIdtrabajador() {
         return idtrabajador;
     }
 
-    public void setIdtrabajador(int idtrabajador) {
+    public void SetIdtrabajador(int idtrabajador) {
         this.idtrabajador = idtrabajador;
     }
 
-    public String getTipo_reserva() {
+    public String GetTipo_reserva() {
         return tipo_reserva;
     }
 
-    public void setTipo_reserva(String tipo_reserva) {
+    public void SetTipo_reserva(String tipo_reserva) {
         this.tipo_reserva = tipo_reserva;
     }
 
-    public Date getFecha_reserva() {
+    public Date GetFecha_reserva() {
         return fecha_reserva;
     }
 
-    public void setFecha_reserva(Date fecha_reserva) {
+    public void SetFecha_reserva(Date fecha_reserva) {
         this.fecha_reserva = fecha_reserva;
     }
 
-    public Date getFecha_ingresa() {
+    public Date GetFecha_ingresa() {
         return fecha_ingresa;
     }
 
-    public void setFecha_ingresa(Date fecha_ingresa) {
+    public void SetFecha_ingresa(Date fecha_ingresa) {
         this.fecha_ingresa = fecha_ingresa;
     }
 
-    public Date getFecha_salida() {
+    public Date GetFecha_salida() {
         return fecha_salida;
     }
 
-    public void setFecha_salida(Date fecha_salida) {
+    public void SetFecha_salida(Date fecha_salida) {
         this.fecha_salida = fecha_salida;
     }
 
-    public Double getCosto_alojamiento() {
+    public Double GetCosto_alojamiento() {
         return costo_alojamiento;
     }
 
-    public void setCosto_alojamiento(Double costo_alojamiento) {
+    public void SetCosto_alojamiento(Double costo_alojamiento) {
         this.costo_alojamiento = costo_alojamiento;
     }
 
-    public String getEstado() {
+    public String GetEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void SetEstado(String estado) {
         this.estado = estado;
     }
     

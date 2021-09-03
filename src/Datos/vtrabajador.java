@@ -2,17 +2,16 @@
 
 package Datos;
 
-public class vtrabajador extends vpersona{
+public class Vtrabajador extends Vpersona{
      Double sueldo;
      String acceso;
      String login;
      String password;
      String estado;
 
-    public vtrabajador() {
-    }
 
-    public vtrabajador(Double sueldo, String acceso, String login, String password, String estado) {
+
+    public Vtrabajador(Double sueldo, String acceso, String login, String password, String estado) {
         this.sueldo = sueldo;
         this.acceso = acceso;
         this.login = login;
@@ -20,43 +19,47 @@ public class vtrabajador extends vpersona{
         this.estado = estado;
     }
 
-    public Double getSueldo() {
+    public Vtrabajador() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Double GetSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(Double sueldo) {
+    public void SetSueldo(Double sueldo) {
         this.sueldo = sueldo;
     }
 
-    public String getAcceso() {
+    public String GetAcceso() {
         return acceso;
     }
 
-    public void setAcceso(String acceso) {
+    public void SetAcceso(String acceso) {
         this.acceso = acceso;
     }
 
-    public String getLogin() {
+    public String GetLogin() {
         return login;
     }
 
-    public void setLogin(String login) {
+    public void SetLogin(String login) {
         this.login = login;
     }
 
-    public String getPassword() {
+    public String GetPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void SetPassword(String password) {
         this.password = password;
     }
 
-    public String getEstado() {
+    public String GetEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void SetEstado(String estado) {
         this.estado = estado;
     }
      

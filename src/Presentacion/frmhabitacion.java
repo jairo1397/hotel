@@ -1,17 +1,10 @@
-
 package Presentacion;
-
-import Datos.vhabitacion;
+import Datos.Vhabitacion;
 import Logica.conexion;
 import Logica.fhabitacion;
-import java.io.File;
 import java.sql.Connection;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
-
 public class frmhabitacion extends javax.swing.JInternalFrame {
 
     public frmhabitacion() {
@@ -470,24 +463,24 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
             return;
         }
 
-        vhabitacion dts = new vhabitacion();
+        Vhabitacion dts = new Vhabitacion();
         fhabitacion func = new fhabitacion();
 
-        dts.setNumero(txtnumero.getText());
+        dts.SetNumero(txtnumero.getText());
 
         int seleccionado = cbopiso.getSelectedIndex();
-        dts.setPiso((String) cbopiso.getItemAt(seleccionado));
+        dts.SetPiso((String) cbopiso.getItemAt(seleccionado));
 
-        dts.setDescripcion(txtdescripcion.getText());
-        dts.setCaracteristicas(txtcaracteristicas.getText());
+        dts.SetDescripcion(txtdescripcion.getText());
+        dts.SetCaracteristicas(txtcaracteristicas.getText());
         
-        dts.setPrecio_diario(Double.parseDouble(txtprecio_diario.getText()));
+        dts.SetPrecio_diario(Double.parseDouble(txtprecio_diario.getText()));
         
         seleccionado = cboestado.getSelectedIndex();
-        dts.setEstado((String) cboestado.getItemAt(seleccionado));
+        dts.SetEstado((String) cboestado.getItemAt(seleccionado));
         
         seleccionado = cbotipo_habitacion.getSelectedIndex();
-        dts.setTipo_habitacion((String) cbotipo_habitacion.getItemAt(seleccionado));
+        dts.SetTipo_habitacion((String) cbotipo_habitacion.getItemAt(seleccionado));
         
         
         if (accion.equals("guardar")) {
@@ -503,7 +496,7 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
             
         }
         else if (accion.equals("editar")){
-            dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+            dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
             
             
             if (func.editar(dts)) {
@@ -526,9 +519,9 @@ public class frmhabitacion extends javax.swing.JInternalFrame {
             
             if (confirmacion==0) {
                 fhabitacion func = new fhabitacion ();
-                vhabitacion dts= new vhabitacion();
+                Vhabitacion dts= new Vhabitacion();
                 
-                dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();

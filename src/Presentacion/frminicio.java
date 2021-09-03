@@ -1,7 +1,5 @@
 
-
 package Presentacion;
-
 public class frminicio extends javax.swing.JFrame {
 
     /**

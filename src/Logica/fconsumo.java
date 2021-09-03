@@ -1,9 +1,5 @@
-
 package Logica;
-
-import Datos.vconsumo;
-import Datos.vhabitacion;
-import Datos.vproducto;
+import Datos.Vconsumo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,17 +62,17 @@ public class fconsumo {
        
    } 
    
-   public boolean insertar (vconsumo dts){
+   public boolean insertar (Vconsumo dts){
        sSQL="insert into consumo (idreserva,idproducto,cantidad,precio_venta,estado)" +
                "values (?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.getIdreserva());
-           pst.setInt(2, dts.getIdproducto());
-           pst.setDouble(3, dts.getCantidad());
-           pst.setDouble(4, dts.getPrecio_venta());
-           pst.setString(5, dts.getEstado());
+           pst.setInt(1, dts.GetIdreserva());
+           pst.setInt(2, dts.GetIdproducto());
+           pst.setDouble(3, dts.GetCantidad());
+           pst.setDouble(4, dts.GetPrecio_venta());
+           pst.setString(5, dts.GetEstado());
            
            
            int n=pst.executeUpdate();
@@ -96,29 +92,29 @@ public class fconsumo {
        }
    }
    
-   public boolean editar (vconsumo dts){
+   public boolean editar (Vconsumo dts){
        sSQL="update consumo set idreserva=?,idproducto=?,cantidad=?,precio_venta=?,estado=?"+
                " where idconsumo=?";
            
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setInt(1, dts.getIdreserva());
-           pst.setInt(2, dts.getIdproducto());
-           pst.setDouble(3, dts.getCantidad());
-           pst.setDouble(4, dts.getPrecio_venta());
-           pst.setString(5, dts.getEstado());
+           pst.setInt(1, dts.GetIdreserva());
+           pst.setInt(2, dts.GetIdproducto());
+           pst.setDouble(3, dts.GetCantidad());
+           pst.setDouble(4, dts.GetPrecio_venta());
+           pst.setString(5, dts.GetEstado());
            
-           pst.setInt(6, dts.getIdconsumo());
+           pst.setInt(6, dts.GetIdconsumo());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -126,23 +122,23 @@ public class fconsumo {
        }
    }
   
-   public boolean eliminar (vconsumo dts){
+   public boolean eliminar (Vconsumo dts){
        sSQL="delete from consumo where idconsumo=?";
        
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.getIdconsumo());
+           pst.setInt(1, dts.GetIdconsumo());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);

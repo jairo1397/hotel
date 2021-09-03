@@ -1,7 +1,5 @@
-
 package Logica;
-
-import Datos.vhabitacion;
+import Datos.Vhabitacion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -108,28 +106,28 @@ public class fhabitacion {
    
    
    
-   public boolean insertar (vhabitacion dts){
+   public boolean insertar (Vhabitacion dts){
        sSQL="insert into habitacion (numero,piso,descripcion,caracteristicas,precio_diario,estado,tipo_habitacion)" +
                "values (?,?,?,?,?,?,?)";
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.getNumero());
-           pst.setString(2, dts.getPiso());
-           pst.setString(3, dts.getDescripcion());
-           pst.setString(4, dts.getCaracteristicas());
-           pst.setDouble(5, dts.getPrecio_diario());
-           pst.setString(6, dts.getEstado());
-           pst.setString(7, dts.getTipo_habitacion());
+           pst.setString(1, dts.GetNumero());
+           pst.setString(2, dts.GetPiso());
+           pst.setString(3, dts.GetDescripcion());
+           pst.setString(4, dts.GetCaracteristicas());
+           pst.setDouble(5, dts.GetPrecio_diario());
+           pst.setString(6, dts.GetEstado());
+           pst.setString(7, dts.GetTipo_habitacion());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
            
            
@@ -139,30 +137,30 @@ public class fhabitacion {
        }
    }
    
-   public boolean editar (vhabitacion dts){
+   public boolean editar (Vhabitacion dts){
        sSQL="update habitacion set numero=?,piso=?,descripcion=?,caracteristicas=?,precio_diario=?,estado=?,tipo_habitacion=?"+
                " where idhabitacion=?";
            
        
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
-           pst.setString(1, dts.getNumero());
-           pst.setString(2, dts.getPiso());
-           pst.setString(3, dts.getDescripcion());
-           pst.setString(4, dts.getCaracteristicas());
-           pst.setDouble(5, dts.getPrecio_diario());
-           pst.setString(6, dts.getEstado());
-           pst.setString(7, dts.getTipo_habitacion());
-           pst.setInt(8, dts.getIdhabitacion());
+           pst.setString(1, dts.GetNumero());
+           pst.setString(2, dts.GetPiso());
+           pst.setString(3, dts.GetDescripcion());
+           pst.setString(4, dts.GetCaracteristicas());
+           pst.setDouble(5, dts.GetPrecio_diario());
+           pst.setString(6, dts.GetEstado());
+           pst.setString(7, dts.GetTipo_habitacion());
+           pst.setInt(8, dts.GetIdhabitacion());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -170,7 +168,7 @@ public class fhabitacion {
        }
    } 
   
-   public boolean desocupar (vhabitacion dts){
+   public boolean desocupar (Vhabitacion dts){
        sSQL="update habitacion set estado='Disponible'"+
                " where idhabitacion=?";
            //alt + 39
@@ -178,16 +176,16 @@ public class fhabitacion {
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
           
-           pst.setInt(1, dts.getIdhabitacion());
+           pst.setInt(1, dts.GetIdhabitacion());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -196,7 +194,7 @@ public class fhabitacion {
    } 
   
    
-   public boolean ocupar (vhabitacion dts){
+   public boolean ocupar (Vhabitacion dts){
        sSQL="update habitacion set estado='Ocupado'"+
                " where idhabitacion=?";
            //alt + 39
@@ -204,16 +202,16 @@ public class fhabitacion {
        try {
            PreparedStatement pst=cn.prepareStatement(sSQL);
           
-           pst.setInt(1, dts.getIdhabitacion());
+           pst.setInt(1, dts.GetIdhabitacion());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);
@@ -224,23 +222,23 @@ public class fhabitacion {
    
    
    
-   public boolean eliminar (vhabitacion dts){
+   public boolean eliminar (Vhabitacion dts){
        sSQL="delete from habitacion where idhabitacion=?";
        
        try {
            
            PreparedStatement pst=cn.prepareStatement(sSQL);
            
-           pst.setInt(1, dts.getIdhabitacion());
+           pst.setInt(1, dts.GetIdhabitacion());
            
            int n=pst.executeUpdate();
            
            if (n!=0){
                return true;
            }
-           else {
+
                return false;
-           }
+
            
        } catch (Exception e) {
            JOptionPane.showConfirmDialog(null, e);

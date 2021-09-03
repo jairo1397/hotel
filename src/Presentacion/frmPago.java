@@ -1,27 +1,26 @@
-
-
 package Presentacion;
-
-import Datos.vhabitacion;
-import Datos.vpago;
-import Datos.vreserva;
+import Datos.Vhabitacion;
+import Datos.Vpago;
+import Datos.Vreserva;
 import Logica.conexion;
 import Logica.fconsumo;
 import Logica.fhabitacion;
 import Logica.fpago;
-import Logica.fproducto;
 import Logica.freserva;
-import java.io.File;
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frmPago extends javax.swing.JInternalFrame {
-
+    private String accion = "guardar";
+    public static String idreserva;
+    public static String cliente;
+    public static String idhabitacion;
+    public static String habitacion;
+    public static Double totalreserva;
+    
     /**
      * Creates new form frmPago
      */
@@ -43,13 +42,7 @@ public class frmPago extends javax.swing.JInternalFrame {
         
     }
     
-    private String accion = "guardar";
-    public static String idreserva;
-    public static String cliente;
-    public static String idhabitacion;
-    public static String habitacion;
-    public static Double totalreserva;
-    
+
 
     void ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
@@ -607,28 +600,30 @@ public class frmPago extends javax.swing.JInternalFrame {
             return;
         }
 
-        vpago dts = new vpago();
+        Vpago dts = new Vpago();
         fpago func = new fpago();
 
-        dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
+        dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
 
 
         int seleccionado = cbotipo_comprobante.getSelectedIndex();
-        dts.setTipo_comprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
+        dts.SetTipo_comprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
         
-        dts.setNum_comprobante(txtnum_comprobante.getText());
-        dts.setIgv(Double.parseDouble(txtigv.getText()));
-        dts.setTotal_pago(Double.parseDouble(txttotal_pago.getText()));
+        dts.SetNum_comprobante(txtnum_comprobante.getText());
+        dts.SetIgv(Double.parseDouble(txtigv.getText()));
+        dts.SetTotal_pago(Double.parseDouble(txttotal_pago.getText()));
         
         Calendar cal;
-        int d,m,a;
+        int d;
+        int m;
+        int a;
         
         cal=dcfecha_pago.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
         
-        dts.setFecha_pago( new Date (a,m,d));
+        dts.SetFecha_pago( new Date (a,m,d));
         
         
         cal=dcfecha_emision.getCalendar();
@@ -636,7 +631,7 @@ public class frmPago extends javax.swing.JInternalFrame {
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
         
-        dts.setFecha_emision(new Date (a,m,d));
+        dts.SetFecha_emision(new Date (a,m,d));
         
         
         
@@ -650,24 +645,24 @@ public class frmPago extends javax.swing.JInternalFrame {
                 
                 //Desocupar la Habitación
                 fhabitacion func2 = new fhabitacion();
-                vhabitacion dts2 = new vhabitacion();
+                Vhabitacion dts2 = new Vhabitacion();
                 
-                dts2.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts2.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func2.desocupar(dts2);
                 
                 //Cancelar o pagar la reserva
                 
                 freserva func3 = new freserva();
-                vreserva dts3 = new vreserva();
+                Vreserva dts3 = new Vreserva();
                 
-                dts3.setIdreserva(Integer.parseInt(txtidreserva.getText()));
+                dts3.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
                 func3.pagar(dts3);
                 
             }
 
         }
         else if (accion.equals("editar")){
-            dts.setIdpago(Integer.parseInt(txtidpago.getText()));
+            dts.SetIdpago(Integer.parseInt(txtidpago.getText()));
 
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "El pago del Sr. " + 
@@ -713,9 +708,9 @@ public class frmPago extends javax.swing.JInternalFrame {
 
             if (confirmacion==0) {
                 fpago func = new fpago ();
-                vpago dts= new vpago();
+                Vpago dts= new Vpago();
 
-                dts.setIdpago(Integer.parseInt(txtidpago.getText()));
+                dts.SetIdpago(Integer.parseInt(txtidpago.getText()));
                 func.eliminar(dts);
                 mostrar(idreserva);
                 inhabilitar();

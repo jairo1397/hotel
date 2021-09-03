@@ -1,17 +1,12 @@
-
-
 package Presentacion;
-
-import Datos.vhabitacion;
-import Datos.vreserva;
+import Datos.Vhabitacion;
+import Datos.Vreserva;
 import Logica.fhabitacion;
-import Logica.fproducto;
 import Logica.freserva;
 import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 
 public class frmreserva extends javax.swing.JInternalFrame {
 
@@ -634,39 +629,41 @@ public class frmreserva extends javax.swing.JInternalFrame {
             return;
         }
 
-        vreserva dts = new vreserva();
+        Vreserva dts = new Vreserva();
         freserva func = new freserva();
         
-        dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
-        dts.setIdcliente(Integer.parseInt(txtidcliente.getText()));
-        dts.setIdtrabajador(idusuario);
+        dts.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+        dts.SetIdcliente(Integer.parseInt(txtidcliente.getText()));
+        dts.SetIdtrabajador(idusuario);
         
         int seleccionado = cbotipo_reserva.getSelectedIndex();
-        dts.setTipo_reserva((String) cbotipo_reserva.getItemAt(seleccionado));
+        dts.SetTipo_reserva((String) cbotipo_reserva.getItemAt(seleccionado));
         
         Calendar cal;
-        int d,m,a;
+        int d;
+        int m;
+        int a;
         cal=dcfecha_reserva.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_reserva(new Date(a,m,d));
+        dts.SetFecha_reserva(new Date(a,m,d));
         
         cal=dcfecha_ingresa.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_ingresa(new Date(a,m,d));
+        dts.SetFecha_ingresa(new Date(a,m,d));
         
         cal=dcfecha_salida.getCalendar();
         d=cal.get(Calendar.DAY_OF_MONTH);
         m=cal.get(Calendar.MONTH);
         a=cal.get(Calendar.YEAR) - 1900;
-        dts.setFecha_salida(new Date(a,m,d));
+        dts.SetFecha_salida(new Date(a,m,d));
         
-        dts.setCosto_alojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
+        dts.SetCosto_alojamiento(Double.parseDouble(txtcosto_alojamiento.getText()));
         seleccionado = cboestado.getSelectedIndex();
-        dts.setEstado((String) cboestado.getItemAt(seleccionado));
+        dts.SetEstado((String) cboestado.getItemAt(seleccionado));
         
         
         
@@ -685,16 +682,16 @@ public class frmreserva extends javax.swing.JInternalFrame {
                 
                 //ocupamos la Habitación alquilada
                 fhabitacion func3= new fhabitacion();
-                vhabitacion dts3 = new vhabitacion();
+                Vhabitacion dts3 = new Vhabitacion();
                 
-                dts3.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
+                dts3.SetIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func3.ocupar(dts3);
             }
 
         }
         else if (accion.equals("editar")){
-            dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
-            dts.setIdtrabajador(Integer.parseInt(txtidtrabajador.getText()));            
+            dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
+            dts.SetIdtrabajador(Integer.parseInt(txtidtrabajador.getText()));            
             if (func.editar(dts)) {
                 JOptionPane.showMessageDialog(rootPane, "La reserva fue Editada satisfactoriamente");
                 mostrar("");
@@ -746,9 +743,9 @@ public class frmreserva extends javax.swing.JInternalFrame {
 
             if (confirmacion==0) {
                 freserva func = new freserva ();
-                vreserva dts= new vreserva();
+                Vreserva dts= new Vreserva();
 
-                dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
+                dts.SetIdreserva(Integer.parseInt(txtidreserva.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
@@ -797,7 +794,7 @@ public class frmreserva extends javax.swing.JInternalFrame {
 
     private void btnbuscaclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscaclienteActionPerformed
         // TODO add your handling code here:
-        frmvistacliente form= new frmvistacliente();
+        Frmvistacliente form= new Frmvistacliente();
         form.toFront();
         form.setVisible(true);
     }//GEN-LAST:event_btnbuscaclienteActionPerformed

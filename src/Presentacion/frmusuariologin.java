@@ -1,8 +1,6 @@
 
-
 package Presentacion;
-
-import Datos.vtrabajador;
+import Datos.Vtrabajador;
 import Logica.ftrabajador;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -156,14 +154,14 @@ public class frmusuariologin extends javax.swing.JFrame {
         try {
             DefaultTableModel modelo;
             ftrabajador func =new ftrabajador();
-            vtrabajador dts=new vtrabajador();
+            Vtrabajador dts=new Vtrabajador();
             
             
-            dts.setLogin(txtusuario.getText());
-            dts.setPassword(txtpassword.getText());
+            dts.SetLogin(txtusuario.getText());
+            dts.SetPassword(txtpassword.getText());
             
             
-            modelo=func.login(dts.getLogin(),dts.getPassword());
+            modelo=func.login(dts.GetLogin(),dts.GetPassword());
             
             tablalistado.setModel(modelo);
             

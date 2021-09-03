@@ -2,7 +2,7 @@
 
 package Datos;
 
-public class vhabitacion {
+public class Vhabitacion {
     private int idhabitacion;
     private String numero;
     private String piso;
@@ -12,7 +12,7 @@ public class vhabitacion {
     private String estado;
     private String tipo_habitacion;
 
-    public vhabitacion(int idhabitacion, String numero, String piso, String descripcion, String caracteristicas, Double precio_diario, String estado, String tipo_habitacion) {
+    public Vhabitacion(int idhabitacion, String numero, String piso, String descripcion, String caracteristicas, Double precio_diario, String estado, String tipo_habitacion) {
         this.idhabitacion = idhabitacion;
         this.numero = numero;
         this.piso = piso;
@@ -23,70 +23,73 @@ public class vhabitacion {
         this.tipo_habitacion = tipo_habitacion;
     }
 
-    public vhabitacion() {
+    public Vhabitacion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public int getIdhabitacion() {
+
+
+    public int GetIdhabitacion() {
         return idhabitacion;
     }
 
-    public void setIdhabitacion(int idhabitacion) {
+    public void SetIdhabitacion(int idhabitacion) {
         this.idhabitacion = idhabitacion;
     }
 
-    public String getNumero() {
+    public String GetNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void SetNumero(String numero) {
         this.numero = numero;
     }
 
-    public String getPiso() {
+    public String GetPiso() {
         return piso;
     }
 
-    public void setPiso(String piso) {
+    public void SetPiso(String piso) {
         this.piso = piso;
     }
 
-    public String getDescripcion() {
+    public String GetDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
+    public void SetDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String getCaracteristicas() {
+    public String GetCaracteristicas() {
         return caracteristicas;
     }
 
-    public void setCaracteristicas(String caracteristicas) {
+    public void SetCaracteristicas(String caracteristicas) {
         this.caracteristicas = caracteristicas;
     }
 
-    public Double getPrecio_diario() {
+    public Double GetPrecio_diario() {
         return precio_diario;
     }
 
-    public void setPrecio_diario(Double precio_diario) {
+    public void SetPrecio_diario(Double precio_diario) {
         this.precio_diario = precio_diario;
     }
 
-    public String getEstado() {
+    public String GetEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void SetEstado(String estado) {
         this.estado = estado;
     }
 
-    public String getTipo_habitacion() {
+    public String GetTipo_habitacion() {
         return tipo_habitacion;
     }
 
-    public void setTipo_habitacion(String tipo_habitacion) {
+    public void SetTipo_habitacion(String tipo_habitacion) {
         this.tipo_habitacion = tipo_habitacion;
     }
     

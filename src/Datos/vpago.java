@@ -3,7 +3,7 @@ package Datos;
 
 import java.sql.Date;
 
-public class vpago {
+public class Vpago {
     private int idpago;
     private int idreserva;
     private String tipo_comprobante;
@@ -13,10 +13,8 @@ public class vpago {
     private Date fecha_emision;
     private Date fecha_pago;
 
-    public vpago() {
-    }
 
-    public vpago(int idpago, int idreserva, String tipo_comprobante, String num_comprobante, Double igv, Double total_pago, Date fecha_emision, Date fecha_pago) {
+    public Vpago(int idpago, int idreserva, String tipo_comprobante, String num_comprobante, Double igv, Double total_pago, Date fecha_emision, Date fecha_pago) {
         this.idpago = idpago;
         this.idreserva = idreserva;
         this.tipo_comprobante = tipo_comprobante;
@@ -27,67 +25,73 @@ public class vpago {
         this.fecha_pago = fecha_pago;
     }
 
-    public int getIdpago() {
+    public Vpago() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
+    public int GetIdpago() {
         return idpago;
     }
 
-    public void setIdpago(int idpago) {
+    public void SetIdpago(int idpago) {
         this.idpago = idpago;
     }
 
-    public int getIdreserva() {
+    public int GetIdreserva() {
         return idreserva;
     }
 
-    public void setIdreserva(int idreserva) {
+    public void SetIdreserva(int idreserva) {
         this.idreserva = idreserva;
     }
 
-    public String getTipo_comprobante() {
+    public String GetTipo_comprobante() {
         return tipo_comprobante;
     }
 
-    public void setTipo_comprobante(String tipo_comprobante) {
+    public void SetTipo_comprobante(String tipo_comprobante) {
         this.tipo_comprobante = tipo_comprobante;
     }
 
-    public String getNum_comprobante() {
+    public String GetNum_comprobante() {
         return num_comprobante;
     }
 
-    public void setNum_comprobante(String num_comprobante) {
+    public void SetNum_comprobante(String num_comprobante) {
         this.num_comprobante = num_comprobante;
     }
 
-    public Double getIgv() {
+    public Double GetIgv() {
         return igv;
     }
 
-    public void setIgv(Double igv) {
+    public void SetIgv(Double igv) {
         this.igv = igv;
     }
 
-    public Double getTotal_pago() {
+    public Double GetTotal_pago() {
         return total_pago;
     }
 
-    public void setTotal_pago(Double total_pago) {
+    public void SetTotal_pago(Double total_pago) {
         this.total_pago = total_pago;
     }
 
-    public Date getFecha_emision() {
+    public Date GetFecha_emision() {
         return fecha_emision;
     }
 
-    public void setFecha_emision(Date fecha_emision) {
+    public void SetFecha_emision(Date fecha_emision) {
         this.fecha_emision = fecha_emision;
     }
 
-    public Date getFecha_pago() {
+    public Date GetFecha_pago() {
         return fecha_pago;
     }
 
-    public void setFecha_pago(Date fecha_pago) {
+    public void SetFecha_pago(Date fecha_pago) {
         this.fecha_pago = fecha_pago;
     }
     

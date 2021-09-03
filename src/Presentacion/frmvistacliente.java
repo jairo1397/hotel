@@ -2,22 +2,22 @@
 
 package Presentacion;
 
-import Logica.fcliente;
+import Logica.Fcliente;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmvistacliente extends javax.swing.JFrame {
+public class Frmvistacliente extends javax.swing.JFrame {
 
     /**
      * Creates new form frmvistacliente
      */
-    public frmvistacliente() {
+    public Frmvistacliente() {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
     }
     
-    void ocultar_columnas() {
+    void Ocultar_columnas() {
         tablalistado.getColumnModel().getColumn(0).setMaxWidth(0);
         tablalistado.getColumnModel().getColumn(0).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(0).setPreferredWidth(0);
@@ -26,11 +26,11 @@ public class frmvistacliente extends javax.swing.JFrame {
      void mostrar(String buscar) {
         try {
             DefaultTableModel modelo;
-            fcliente func = new fcliente();
+            Fcliente func = new Fcliente();
             modelo = func.mostrar(buscar);
 
             tablalistado.setModel(modelo);
-            ocultar_columnas();
+            Ocultar_columnas();
             lbltotalregistros.setText("Total Registros " + Integer.toString(func.totalregistros));
 
         } catch (Exception e) {
@@ -188,20 +188,20 @@ public class frmvistacliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frmvistacliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmvistacliente().setVisible(true);
+                new Frmvistacliente().setVisible(true);
             }
         });
     }
